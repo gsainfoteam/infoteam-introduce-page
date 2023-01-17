@@ -1,13 +1,152 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "reset.css";
+
+.root-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+
+  /*border: 1px red solid;*/
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*page, section*/
+
+.page-container {
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /*max-width: 1400px;
+  padding: 32px 0;  */
+}
+
+.section-container-col {
+  width: 100%;
+  height: 760px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*header*/
+
+.header-container {
+  background-color: #f4f4f4;
+  position: sticky;
+  top: 0;
+}
+
+.header-wrap {
+  height: 64px;
+  margin-left: 25px;
+  margin-right: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-right-wrap ul {
+  display: flex;
+}
+
+.header-right-wrap li {
+  margin-right: 12px;
+  padding: 10px;
+}
+
+.header-nav-item {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 120%;
+}
+
+/*service*/
+
+.service-container {
+  display: flex;
+  margin: 50px 40px;
+
+  max-width: 1200px;
+  width: 100vw;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.service-right {
+  margin: 20px 50px;
+  justify-content: center;
+}
+
+/*list*/
+
+.list-container {
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  width: 900px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/*member*/
+
+.member-container {
+  width: 33.33%;
+  margin-block: 30px;
+  flex-grow: 0;
+}
+
+.member-card {
+  margin: 0 auto;
+
+  width: 230px;
+  height: 130px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ------------------------------------------ */
+
+@media only screen and (max-width: 900px) {
+  /* For mobile phones: (768px보다 여유 둠) */
+
+  /* member card & img card 3열 -> 2열 */
+  .list-container {
+    width: 600px;
+  }
+  .member-container {
+    width: 50%;
+  }
+  .list-container img {
+    width: 50%;
+  }
+
+  /* service info box [축 row -> column], 
+                      [text box 너비 축소] */
+  .service-container {
+    flex-direction: column;
+  }
+  /* .service-container img {
+    margin-left: 40px;
+    margin-right: 40px;
+  } */
+  .service-right {
+    margin-block: 40px;
+  }
+
+  /* home : Infoteam아래글 2줄 -> 3줄 */
 }
