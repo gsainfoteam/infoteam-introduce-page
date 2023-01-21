@@ -5,6 +5,7 @@ const Records = () => {
   return (
     <div className="page-container">
       <T.Title>records</T.Title>
+      <div style={{ height: "800px" }}></div>
     </div>
   );
 };

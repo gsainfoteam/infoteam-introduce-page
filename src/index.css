@@ -35,7 +35,8 @@
 /*header*/
 
 .header-container {
-  background-color: #f4f4f4;
+  background-color: rgba(250, 250, 250, 0.5);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
 }
@@ -70,18 +71,33 @@
 
 .service-container {
   display: flex;
-  margin: 50px 40px;
+  margin: 80px 40px;
 
   max-width: 1200px;
-  width: 100vw;
+  width: 80vw;
 
   justify-content: center;
   align-items: center;
 }
 
 .service-right {
-  margin: 20px 50px;
+  margin: 20px 70px;
   justify-content: center;
+}
+
+.service-right div button {
+  margin: 0px 30px;
+  width: 73px;
+  height: 28px;
+  border: none;
+  border-radius: 7px;
+
+  font-size: 15px;
+}
+
+.service-right div button:hover {
+  background-color: #e2e2e2;
+  transition: 0.3s;
 }
 
 /*list*/

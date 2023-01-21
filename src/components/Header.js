@@ -1,6 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import imgLogo from "../imgs/InfoteamLogo.png";
+// import Radium from "radium";
+
+// const RadiatingNavLink = Radium(NavLink);
+// const RadiatingLink = Radium(Link);
 
 function Header() {
   return (
@@ -17,6 +21,21 @@ function Header() {
               <Link className="header-nav-item" to="/service">
                 services
               </Link>
+              {/* <NavLink
+                className="header-nav-item"
+                to="/service"
+                activeClassName="header-nav-item-active"
+              >
+                services
+              </NavLink> */}
+              {/* <RadiatingNavLink
+                className="header-nav-item"
+                to="/service"
+                style={{ color: "black", ":hover": { color: "gray" } }}
+                activeStyle={{ color: "pink" }}
+              >
+                services
+              </RadiatingNavLink> */}
             </li>
             <li>
               <Link className="header-nav-item" to="/member">

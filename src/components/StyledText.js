@@ -3,14 +3,16 @@ import styled from "styled-components";
 /* Home & Basic text */
 
 export const BigTitle = styled.div`
-  margin-block: 10px;
-  font-size: 100px;
+  margin-block: 8px;
+  font-size: 105px;
   font-weight: bold;
   text-align: center;
+  @media;
 `;
 
 export const Title = styled.div`
   margin-block: 10px;
+  line-height: 130%;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
@@ -18,6 +20,7 @@ export const Title = styled.div`
 
 export const Text = styled.div`
   margin-block: 10px;
+  line-height: 130%;
   font-size: 20px;
   text-align: center;
 `;
@@ -25,14 +28,17 @@ export const Text = styled.div`
 /* Service info box ; text */
 export const ServiceName = styled.div`
   margin-bottom: 30px;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: bold;
   text-align: center;
 `;
 
 export const ServiceInfo = styled.div`
   margin-block: 20px;
-  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 130%;
+  font-size: 15px;
+  text-align: justify;
 `;
 
 /* Member info card ; text */

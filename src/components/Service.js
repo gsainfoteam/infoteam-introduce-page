@@ -12,7 +12,7 @@ function Service({ name, info, image_path, page_path, github_path }) {
       <img
         src={image_path}
         style={{
-          marginLeft: isMobile ? "20px" : "60px",
+          marginLeft: isMobile ? "20px" : "70px",
           marginRight: "20px",
           width: "270px",
         }}
@@ -21,16 +21,8 @@ function Service({ name, info, image_path, page_path, github_path }) {
         <T.ServiceName>{name}</T.ServiceName>
         <T.ServiceInfo>{info}</T.ServiceInfo>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <button
-            onClick={() => window.open(page_path, "_blank")}
-            style={{ margin: "0px 20px" }}
-          >
-            page
-          </button>
-          <button
-            onClick={() => window.open(github_path, "_blank")}
-            style={{ margin: "0px 20px" }}
-          >
+          <button onClick={() => window.open(page_path, "_blank")}>page</button>
+          <button onClick={() => window.open(github_path, "_blank")}>
             github
           </button>
         </div>

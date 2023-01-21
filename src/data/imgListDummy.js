@@ -1,4 +1,4 @@
-import blankImg from "../imgs/grayBlankRect.png";
+import blankImg from "../imgs/grayBlankRect2.png";
 
 export const imgList = [
   {
