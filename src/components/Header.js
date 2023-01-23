@@ -1,56 +1,118 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
-import imgLogo from "../imgs/InfoteamLogo.png";
-// import Radium from "radium";
+import styled from "styled-components";
+import imgLogo from "../imgs/logoImgs/InfoteamLogo2.png";
+import imgLogoMini from "../imgs/logoImgs/InfoteamLogoMini.png";
 
-// const RadiatingNavLink = Radium(NavLink);
-// const RadiatingLink = Radium(Link);
+/* stlyed-components */
+const HeaderContainer = styled.div`
+  background-color: ${(props) =>
+    props.simplify ? "rgba(255, 255, 255, 0)" : "rgba(255, 255, 255, 0.5)"};
+  box-shadow: ${(props) =>
+    props.simplify ? "none" : "1px 1px 3px 1px rgba(0, 0, 0, 0.2)"};
+  position: sticky;
+  top: 0;
+  transition: 0.3s;
+  &.hide {
+    transform: translateY(-64px);
+  }
+`;
 
+const HeaderWrap = styled.div`
+  height: 64px;
+  margin-left: 25px;
+  margin-right: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const HeaderRightWrap = styled.div`
+  & > ul {
+    display: flex;
+  }
+`;
+
+const MenuButton = styled(NavLink)`
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 120%;
+
+  padding: 10px;
+  margin-right: 15px;
+
+  transition: 0.1s;
+
+  &:hover {
+    color: #707070;
+  }
+  &.active {
+    color: #ff6565;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+  &.active:hover {
+  }
+`;
+
+/* throttle */
+const throttle = function (callback, waitTime) {
+  let timerId = null;
+  return (e) => {
+    if (timerId) return;
+    timerId = setTimeout(() => {
+      callback.call(this, e);
+      timerId = null;
+    }, waitTime);
+  };
+};
+
+/* header react component */
 function Header() {
+  const [simplify, setSimplify] = useState(false);
+  const [hide, setHide] = useState(false);
+  const [pageY, setPageY] = useState(0);
+  const documentRef = useRef(document);
+
+  const handleScroll = () => {
+    const { pageYOffset } = window;
+    const deltaY = pageYOffset - pageY;
+    const hide = pageYOffset >= 1600 && deltaY >= 0;
+    const simplify = pageYOffset <= 200;
+    setHide(hide);
+    setSimplify(simplify);
+    setPageY(pageYOffset);
+  };
+
+  const throttleScroll = throttle(handleScroll, 50);
+
+  useEffect(() => {
+    documentRef.current.addEventListener("scroll", throttleScroll);
+    return () =>
+      documentRef.current.removeEventListener("scroll", throttleScroll);
+  }, [pageY]);
+
   return (
-    <div className="header-container">
-      <div className="header-wrap">
-        <div className="header-left-wrap">
+    <HeaderContainer className={hide && "hide"} simplify={simplify}>
+      <HeaderWrap>
+        <div>
           <Link style={{ display: "flex", alignItems: "center" }} to="/">
-            <img src={imgLogo} style={{ width: "250px" }} />
+            <img src={imgLogo} style={{ width: "200px", marginLeft: "13px" }} />
           </Link>
         </div>
-        <div className="header-right-wrap">
+        <HeaderRightWrap>
           <ul>
             <li>
-              <Link className="header-nav-item" to="/service">
-                services
-              </Link>
-              {/* <NavLink
-                className="header-nav-item"
-                to="/service"
-                activeClassName="header-nav-item-active"
-              >
-                services
-              </NavLink> */}
-              {/* <RadiatingNavLink
-                className="header-nav-item"
-                to="/service"
-                style={{ color: "black", ":hover": { color: "gray" } }}
-                activeStyle={{ color: "pink" }}
-              >
-                services
-              </RadiatingNavLink> */}
+              <MenuButton to="/service">services</MenuButton>
             </li>
             <li>
-              <Link className="header-nav-item" to="/member">
-                members
-              </Link>
-            </li>
-            <li>
-              <Link className="header-nav-item" to="/record">
-                records
-              </Link>
+              <MenuButton to="/member">members</MenuButton>
             </li>
           </ul>
-        </div>
-      </div>
-    </div>
+        </HeaderRightWrap>
+      </HeaderWrap>
+    </HeaderContainer>
   );
 }
 

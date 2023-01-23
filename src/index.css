@@ -12,8 +12,7 @@
 
 .page-container {
   margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 100px;
+  padding-bottom: 200px;
 
   display: flex;
   flex-direction: column;
@@ -25,53 +24,20 @@
 
 .section-container-col {
   width: 100%;
-  height: 760px;
+  min-height: 760px;
+  padding-block: 140px;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-}
-
-/*header*/
-
-.header-container {
-  background-color: rgba(250, 250, 250, 0.5);
-  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
-  position: sticky;
-  top: 0;
-}
-
-.header-wrap {
-  height: 64px;
-  margin-left: 25px;
-  margin-right: 25px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header-right-wrap ul {
-  display: flex;
-}
-
-.header-right-wrap li {
-  margin-right: 12px;
-  padding: 10px;
-}
-
-.header-nav-item {
-  color: black;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 120%;
 }
 
 /*service*/
 
 .service-container {
   display: flex;
-  margin: 80px 40px;
+  margin: 150px 40px;
 
   max-width: 1200px;
   width: 80vw;
@@ -83,6 +49,7 @@
 .service-right {
   margin: 20px 70px;
   justify-content: center;
+  max-width: 700px;
 }
 
 .service-right div button {
@@ -104,8 +71,7 @@
 
 .list-container {
   margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 100px;
+  margin-block: 30px;
   width: 900px;
 
   display: flex;
@@ -126,9 +92,10 @@
   margin: 0 auto;
 
   width: 230px;
-  height: 130px;
-  background-color: #f2f2f2;
-  border-radius: 10px;
+  height: 140px;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
 
   display: flex;
   flex-direction: column;

@@ -1,10 +1,17 @@
-import gistoryImg from "../imgs/gistoryImg.png";
-import blankImg from "../imgs/grayBlankSquare.png";
+import gistoryImg from "../imgs/serviceImgs/gistoryImg.png";
+import blankImg from "../imgs/blankImgs/grayBlankSquare.png";
 
 export const ServiceList = [
   {
     name: "GISTORY",
     info: "서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다.",
+    imgSrc: blankImg,
+    pageLink: "https://gistory.me/",
+    githubLink: "https://github.com/",
+  },
+  {
+    name: "GISTORY",
+    info: "서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. 서비스 소개글입니다. ",
     imgSrc: blankImg,
     pageLink: "https://gistory.me/",
     githubLink: "https://github.com/",

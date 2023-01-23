@@ -8,9 +8,26 @@ import axios from "axios";
 
 const Members = () => {
   return (
-    <div className="page-container">
-      <T.Title sty="bold">활동중인 팀원들</T.Title>
-      <div className="list-container">
+    <div
+      className="page-container"
+      style={{
+        marginTop: "0px",
+      }}
+    >
+      <div
+        className="section-container-col"
+        style={{
+          background: "linear-gradient(to top, #F7F7F7, #FFFFFF)",
+          paddingBlock: "0px",
+          minHeight: "300px",
+        }}
+      >
+        <T.Title style={{ marginTop: "50px" }}>활동중인 팀원들</T.Title>
+        <T.Text style={{ fontSize: "20px", marginBottom: "30px" }}>
+          2023년 현재 Infoteam으로 활동하고 있는 팀원들을 소개합니다.
+        </T.Text>
+      </div>
+      <div className="list-container" style={{ marginTop: "100px" }}>
         {memberList.map((item) => {
           return (
             <Member
