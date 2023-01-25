@@ -7,12 +7,10 @@ import * as T from "./StyledText";
 /* Home cards - work 1 (devWork) */
 export const RedRoundRectCard = styled.div`
   margin: 25px 35px;
-  width: 230px;
+  width: 243px;
   height: 160px;
   background-color: #ff6565;
   border-radius: 50px;
-  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
-
   display: flex;
   justify-content: center;
   align-items: center;

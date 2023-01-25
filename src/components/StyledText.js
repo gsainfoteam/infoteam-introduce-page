@@ -1,71 +1,45 @@
 import styled from "styled-components";
+import NotoSansRegular from "../fonts/NotoSansKR-Regular.woff";
 
 /* Home & Basic text */
 
-export const BigTitle = styled.div`
+export const InfoteamLogo = styled.div`
   margin-block: 8px;
   font-size: 130px;
   font-weight: bold;
   text-align: center;
-  @media;
+  font-family: "NotoSansRegular";
 `;
 
+const size_Title = "50px";
 export const Title = styled.div`
   margin-block: 10px;
   line-height: 130%;
-  font-size: 35px;
+  font-size: ${size_Title};
   font-weight: bold;
   text-align: center;
 `;
-
-export const TitleInBigBold = styled.span`
-  margin-block: 10px;
-  line-height: 130%;
-  font-size: 45px;
-  font-weight: bold;
-  text-align: center;
-`;
-
+const size_SubTitle = "30px";
 export const SubTitle = styled.div`
   margin-block: 10px;
   line-height: 130%;
-  font-size: 26px;
+  font-size: ${size_SubTitle};
   font-weight: bold;
   text-align: center;
 `;
 
+const size_Text = "28px";
 export const Text = styled.div`
   margin-block: 10px;
   line-height: 130%;
-  font-size: 25px;
+  font-size: ${size_Text};
   text-align: center;
   word-break: keep-all;
 `;
-export const TextInBold = styled.span`
-  line-height: 130%;
-  font-size: 25px;
-  font-weight: bold;
-  text-align: center;
-`;
-
-export const LargeText = styled.div`
-  margin-block: 10px;
-  line-height: 150%;
-  font-size: 40px;
-  text-align: center;
-  word-break: keep-all;
-`;
-export const LargeTextInBold = styled.span`
-  line-height: 150%;
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-`;
-
 export const LinkText = styled.div`
   margin-block: 10px;
   line-height: 130%;
-  font-size: 25px;
+  font-size: ${size_Text};
   text-align: center;
   word-break: keep-all;
   cursor: pointer;
@@ -94,7 +68,7 @@ export const NasText = styled.div`
   font-weight: bold;
   text-align: center;
 `;
-export const gidaesaengText = styled.div`
+export const GidaesaengText = styled.div`
   margin: 10px 20px;
   line-height: 135%;
   color: black;
@@ -102,6 +76,27 @@ export const gidaesaengText = styled.div`
   font-weight: bold;
   text-align: center;
 `;
+
+/* Home - Worktool 의 카드 이름 text */
+export const WorktoolText = styled.div`
+  margin: 12px 12px;
+  line-height: 135%;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+`;
+
+/* Home - Form 의 input 속 text */
+export const FormText = styled.div`
+  margin-block: 10px;
+  line-height: 130%;
+  font-size: 20px;
+  word-break: break-all;
+  word-wrap: break-word;
+`;
+
+/* --------------------------------------------------------------- */
 
 /* Service info box ; text */
 export const ServiceName = styled.div`
@@ -114,9 +109,11 @@ export const ServiceName = styled.div`
 export const ServiceInfo = styled.div`
   margin-block: 20px;
   margin-bottom: 30px;
+  max-width: 620px;
   line-height: 130%;
   font-size: 15px;
   text-align: justify;
+  word-break: keep-all;
 `;
 
 /* Member info card ; text */
@@ -141,3 +138,8 @@ const Normal = styled.div`
   text-align: ${(props) => props.pos || "center"};
 `;
 */
+
+/* Button */
+export const LinkButtonText = styled.div`
+  font-size: 15px;
+`;

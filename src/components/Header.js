@@ -8,9 +8,11 @@ import imgLogoMini from "../imgs/logoImgs/InfoteamLogoMini.png";
 const HeaderContainer = styled.div`
   background-color: ${(props) =>
     props.simplify ? "rgba(255, 255, 255, 0)" : "rgba(255, 255, 255, 0.5)"};
+  backdrop-filter: ${(props) => (props.simplify ? "none" : "blur(10px)")};
   box-shadow: ${(props) =>
     props.simplify ? "none" : "1px 1px 3px 1px rgba(0, 0, 0, 0.2)"};
   position: sticky;
+  z-index: 1;
   top: 0;
   transition: 0.3s;
   &.hide {
@@ -37,8 +39,8 @@ const HeaderRightWrap = styled.div`
 const MenuButton = styled(NavLink)`
   color: black;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 120%;
+  font-weight: normal;
+  font-size: 130%;
 
   padding: 10px;
   margin-right: 15px;
@@ -50,7 +52,6 @@ const MenuButton = styled(NavLink)`
   }
   &.active {
     color: #ff6565;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
   }
   &.active:hover {
   }

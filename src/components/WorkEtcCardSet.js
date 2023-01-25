@@ -9,7 +9,6 @@ const WorkEtcCard_background_devnight = styled.div`
   height: 450px;
   background-color: #343244;
   border-radius: 20px;
-  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
 
   display: flex;
   flex-direction: column;
@@ -27,9 +26,8 @@ const WorkEtcCard_background_rect = styled.div`
   margin: 30px 15px;
   width: 420px;
   height: 210px;
-  background-color: #fbfbfb;
+  background-color: #ffffff;
   border-radius: 20px;
-  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
 
   display: flex;
   justify-content: center;
@@ -100,7 +98,7 @@ function WorkEtcCardSet() {
             if (item.name == "gidaesaeng")
               return <img src={item.imgSrc} style={{ height: "190px" }} />;
           })}
-          <T.gidaesaengText>
+          <T.GidaesaengText>
             GIST 대학생
             <br />
             <div style={{ color: "#1877F2" }}>
@@ -109,7 +107,7 @@ function WorkEtcCardSet() {
               그룹
             </div>
             관리
-          </T.gidaesaengText>
+          </T.GidaesaengText>
         </WorkEtcCard_background_rect>
       </cardColWrapper>
     </div>

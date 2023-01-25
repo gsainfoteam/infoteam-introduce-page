@@ -1,5 +1,6 @@
 import gistoryImg from "../imgs/serviceImgs/gistoryImg.png";
 import amsImg from "../imgs/serviceImgs/amsImg.png";
+import gistalkImg from "../imgs/serviceImgs/gistalkImg.png";
 import blankImg from "../imgs/blankImgs/grayBlankSquare.png";
 
 export const serviceInfoList = [
@@ -19,8 +20,8 @@ export const serviceInfoList = [
   },
   {
     name: "GISTALK",
-    info: "GISTALK 소개글입니다. GISTALK 소개글입니다. GISTALK 소개글입니다. GISTALK 소개글입니다. GISTALK 소개글입니다. GISTALK 소개글입니다. GISTALK 소개글입니다. GISTALK 소개글입니다. ",
-    imgSrc: blankImg,
+    info: "GISTALK은 학생들이 GIST에서 수강한 수업을 평가하고 공유하는 사이트입니다. 강의에 대한 정량적인 평가를 직관적인 육각형 레이더 차트로 제공하며, 포인트 제도로 학생들이 강의평가를 쓰도록 장려하고 있습니다. ",
+    imgSrc: gistalkImg,
     pageLink: "https://gistory.me/",
     githubLink: "https://github.com/",
   },
