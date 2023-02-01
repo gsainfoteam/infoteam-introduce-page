@@ -1,57 +1,125 @@
-import styled from "styled-components";
-import NotoSansRegular from "../fonts/NotoSansKR-Regular.woff";
+import styled, { keyframes, css } from "styled-components";
+
+/* Header text */
+export const HeaderMenuText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  color: black;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 120%;
+`;
 
 /* Home & Basic text */
 
 export const InfoteamLogo = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   margin-block: 8px;
   font-size: 130px;
   font-weight: bold;
   text-align: center;
-  font-family: "NotoSansRegular";
 `;
 
-const size_Title = "50px";
+const size_Title = "40px";
 export const Title = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   margin-block: 10px;
   line-height: 130%;
   font-size: ${size_Title};
-  font-weight: bold;
   text-align: center;
 `;
 const size_SubTitle = "30px";
 export const SubTitle = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   margin-block: 10px;
   line-height: 130%;
   font-size: ${size_SubTitle};
-  font-weight: bold;
   text-align: center;
 `;
 
 const size_Text = "28px";
 export const Text = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   margin-block: 10px;
   line-height: 130%;
   font-size: ${size_Text};
   text-align: center;
   word-break: keep-all;
 `;
+const blinkAnimation = keyframes`
+  0%{
+  }
+  100%{
+    font-size: 30px;
+  }
+`;
 export const LinkText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   margin-block: 10px;
   line-height: 130%;
   font-size: ${size_Text};
   text-align: center;
   word-break: keep-all;
   cursor: pointer;
-  transition: 0.1s linear;
+  animation: ${blinkAnimation} 0.8s linear infinite alternate;
+  transition: 0.8s linear;
   &:hover {
-    color: #707070;
-    font-size: 27px;
+    color: #ff6565;
   }
 `;
 
 /* Home - WorkEtcCardSet 의 카드 속 text */
-export const DevnightText = styled.div`
+const dnTitleMoveIn = keyframes`
+  0%{
+    text-align: left;
+
+  }
+  100%{
+    text-align: left;
+    transform: translate(-50px, -17px); 
+  }
+`;
+const nasTitleMoveIn = keyframes`
+  0%{
+    text-align: left;
+
+  }
+  100%{
+    text-align: left;
+    margin-left: 10px;
+    transform: translate(-185px, 0px); 
+  }
+`;
+const nasTitleMoveOut = keyframes`
+  0%{
+    text-align: left;
+    margin-left: 10px;
+    transform: translate(-185px, 0px); 
+  }
+  100%{
+    text-align: left;
+  }
+`;
+const gdsTitleMoveIn = keyframes`
+  0%{
+    text-align: left;
+
+  }
+  100%{
+    text-align: left;
+    transform: translate(-205px, 0px); 
+  }
+`;
+const gdsTitleMoveOut = keyframes`
+  0%{
+    text-align: left;
+    transform: translate(-205px, 0px); 
+  }
+  100%{
+    text-align: left;
+  }
+`;
+export const DevnightTitleText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   margin-top: 60px;
   margin-bottom: 10px;
   line-height: 150%;
@@ -59,36 +127,127 @@ export const DevnightText = styled.div`
   font-size: 40px;
   font-weight: bold;
   text-align: center;
+
+  ${(props) =>
+    props.isHovering &&
+    css`
+      animation: ${dnTitleMoveIn} 0.4s linear forwards;
+    `}
 `;
-export const NasText = styled.div`
-  margin: 10px 25px;
+export const DevnightInfoText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  position: absolute;
+  bottom: 30px;
+  width: 340px;
   line-height: 130%;
-  color: black;
-  font-size: 30px;
-  font-weight: bold;
-  text-align: center;
+  color: white;
+  font-size: 20px;
+  text-align: justify;
+
+  transition: 0.5s linear;
+  ${(props) =>
+    props.isHovering
+      ? `
+      opacity: 1;
+      transform: translate(0px, -20px);
+  `
+      : `
+      opacity: 0;
+  `}
 `;
-export const GidaesaengText = styled.div`
-  margin: 10px 20px;
-  line-height: 135%;
-  color: black;
-  font-size: 26px;
+export const NasTitleText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  margin-left: 50px;
+  line-height: 120%;
+  color: #444444;
+  font-size: 35px;
   font-weight: bold;
-  text-align: center;
+  text-align: right;
+
+  ${(props) =>
+    props.isHovering
+      ? css`
+          animation: ${nasTitleMoveIn} 0.5s linear forwards;
+        `
+      : css`
+          animation: ${nasTitleMoveOut} 0.3s linear backwards; ;
+        `}
+`;
+export const NasInfoText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  position: absolute;
+  left: 245px;
+  width: 155px;
+  line-height: 130%;
+  font-size: 20px;
+  text-align: right;
+  text-align: justify;
+  direction: rtl;
+
+  transition: 0.4s linear;
+  ${(props) =>
+    props.isHovering
+      ? `
+      opacity: 1;
+      transform: translate(-20px, 0);
+  `
+      : `
+      opacity: 0;
+  `}
+`;
+export const GidaesaengTitleText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 10px 10px;
+  line-height: 120%;
+  color: #1d4a84;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: right;
+
+  ${(props) =>
+    props.isHovering
+      ? css`
+          animation: ${gdsTitleMoveIn} 0.5s linear forwards;
+        `
+      : css`
+          animation: ${gdsTitleMoveOut} 0.3s linear backwards; ;
+        `}
+`;
+export const GidaesaengInfoText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  position: absolute;
+  left: 245px;
+  width: 155px;
+  line-height: 130%;
+  font-size: 20px;
+  text-align: justify;
+  direction: rtl;
+
+  transition: 0.4s linear;
+  ${(props) =>
+    props.isHovering
+      ? `
+      opacity: 1;
+      transform: translate(-20px, 0);
+  `
+      : `
+      opacity: 0;
+  `}
 `;
 
 /* Home - Worktool 의 카드 이름 text */
 export const WorktoolText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   margin: 12px 12px;
   line-height: 135%;
   color: black;
   font-size: 20px;
-  font-weight: bold;
   text-align: center;
 `;
 
-/* Home - Form 의 input 속 text */
+/* Home - Form 속 text */
 export const FormText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   margin-block: 10px;
   line-height: 130%;
   font-size: 20px;
@@ -100,6 +259,7 @@ export const FormText = styled.div`
 
 /* Service info box ; text */
 export const ServiceName = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   margin-bottom: 30px;
   font-size: 36px;
   font-weight: bold;
@@ -107,6 +267,7 @@ export const ServiceName = styled.div`
 `;
 
 export const ServiceInfo = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   margin-block: 20px;
   margin-bottom: 30px;
   max-width: 620px;
@@ -118,15 +279,17 @@ export const ServiceInfo = styled.div`
 
 /* Member info card ; text */
 export const MemberName = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
 `;
-
-export const MemberInfo = styled.div`
-  margin-bottom: 2px;
+export const MemberInfo = styled.span`
+  font-family: "Noto Sans KR", sans-serif;
+  margin-block: 3px;
   font-size: 16px;
+  font-weight: normal;
   text-align: center;
 `;
 
@@ -141,5 +304,16 @@ const Normal = styled.div`
 
 /* Button */
 export const LinkButtonText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+`;
+export const CheckButtonText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 20px;
+
+  ${(props) => (props.isChecked ? `` : `color: #707070`)}
+`;
+export const GoToCompButtonText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
   font-size: 15px;
 `;

@@ -16,7 +16,10 @@ function HomeSec4WorkEtc() {
       className="section-container-col"
       style={{ backgroundColor: "#F5F5F5" }}
     >
-      <T.Title>그리고 다른 여러 일들을 합니다</T.Title>
+      <T.Title>
+        그리고 <span style={{ fontWeight: "bold" }}>다른 여러 일들</span>을
+        합니다
+      </T.Title>
       <WorkEtcCardSet />
     </div>
   );

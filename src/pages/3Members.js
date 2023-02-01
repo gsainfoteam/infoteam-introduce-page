@@ -1,12 +1,16 @@
 import React from "react";
 import * as T from "../components/StyledText";
-import Member from "../components/Member";
-import { memberList } from "../data/memberDummy";
-
 import { useState, useEffect } from "react";
-import axios from "axios";
+//import axios from "axios";
+import Member from "../components/Member";
+import CheckButton from "../components/button/CheckButton";
+import MemberList from "../components/MemberList";
+import { memberList } from "../data/memberInfos";
 
 const Members = () => {
+  const [isCheckedFE, setIsCheckedFE] = useState(true);
+  const [isCheckedBE, setIsCheckedBE] = useState(true);
+
   return (
     <div
       className="page-container"
@@ -17,17 +21,41 @@ const Members = () => {
       <div
         className="section-container-col"
         style={{
-          background: "linear-gradient(to top, #F7F7F7, #FFFFFF)",
+          background: "linear-gradient(to top, #F7F7F7, #F7F7F7)",
           paddingBlock: "0px",
           minHeight: "300px",
         }}
       >
-        <T.Title style={{ marginTop: "50px" }}>활동중인 팀원들</T.Title>
+        <T.Title style={{ marginTop: "50px" }}>
+          활동중인 <span style={{ fontWeight: "bold" }}>팀원들</span>
+        </T.Title>
         <T.Text style={{ fontSize: "20px", marginBottom: "30px" }}>
           2023년 현재 Infoteam으로 활동하고 있는 팀원들을 소개합니다.
         </T.Text>
       </div>
-      <div className="list-container" style={{ marginTop: "100px" }}>
+      {/*
+      <div
+        style={{
+          width: "300px",
+          display: "flex",
+          justifyContent: "space-between",
+          marginTop: "70px",
+        }}
+      >
+        <CheckButton
+          category="frontend"
+          isChecked={isCheckedFE}
+          setIsChecked={setIsCheckedFE}
+        />
+        <CheckButton
+          category="backend"
+          isChecked={isCheckedBE}
+          setIsChecked={setIsCheckedBE}
+        />
+      </div>
+      <MemberList isCheckedFE={isCheckedFE} isCheckedBE={isCheckedBE} />
+      */}
+      <div className="list-container" style={{ marginTop: "40px" }}>
         {memberList.map((item) => {
           return (
             <Member

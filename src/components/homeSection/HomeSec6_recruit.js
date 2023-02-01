@@ -10,15 +10,16 @@ const HorizonLine = styled.div`
 
 const LittleInput = styled.input`
   margin: 10px;
-  padding: 15px;
-  width: 256px;
-  height: 35px;
+  padding: 20px;
+  width: 237.5px;
+  height: 25px;
 
   border: none;
   border-radius: 15px;
 
   &:focus {
     outline: 0px solid #ff6565;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1);
   }
 
   &::placeholder {
@@ -29,8 +30,8 @@ const LittleInput = styled.input`
 `;
 const LargeInput = styled.textarea`
   margin: 10px;
-  padding: 15px;
-  width: 870px;
+  padding: 20px;
+  width: 832.5px;
   height: 250px;
 
   resize: none;
@@ -40,6 +41,11 @@ const LargeInput = styled.textarea`
 
   &:focus {
     outline: 0px solid #ff6565;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  &::placeholder {
+    color: #000000;
   }
 
   vertical-align: top;
@@ -47,10 +53,8 @@ const LargeInput = styled.textarea`
 `;
 
 const SubmitButton = styled.button`
-  margin: 25px 0px 10px;
-
-  width: 110px;
-  height: 40px;
+  width: 120px;
+  height: 45px;
   background-color: #4d4d4d;
   border-radius: 10px;
   border: none;
@@ -58,11 +62,19 @@ const SubmitButton = styled.button`
   color: white;
 
   cursor: pointer;
+
+  transition: 0.1s;
+
   &:hover {
     background-color: #757575;
   }
+  &:active {
+    width: 105px;
+    height: 38px;
+  }
 
-  font-size: 16px;
+  ${T.FormText.componentStyle.rules[0]}
+  font-weight: normal;
 `;
 
 function HomeSec6Recruit() {
@@ -72,7 +84,7 @@ function HomeSec6Recruit() {
       style={{ backgroundColor: "#F5F5F5" }}
     >
       <T.Title style={{ marginBottom: "50px", fontSize: "50px" }}>
-        인포팀에 바로 지원하기
+        인포팀에 바로 <span style={{ fontWeight: "bold" }}>지원</span>하기
       </T.Title>
       <HorizonLine />
       <T.FormText style={{ marginBottom: "40px" }}>
@@ -94,7 +106,9 @@ function HomeSec6Recruit() {
         <LargeInput placeholder="개발에 참여하신 경험이 있으시면 적어주세요" />
         <LargeInput placeholder="하시고 싶으신 말이 있다면 적어주세요" />
       </div>
-      <SubmitButton>제출하기</SubmitButton>
+      <div style={{ height: "50px" }}>
+        <SubmitButton>제출하기</SubmitButton>
+      </div>
     </div>
   );
 }

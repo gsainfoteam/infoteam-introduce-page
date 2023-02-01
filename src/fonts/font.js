@@ -1,9 +1,16 @@
 import { createGlobalStyle } from "styled-components";
-import NotoSansRegular from "../fonts/NotoSansKR-Regular.woff";
+import NotoSansRegular from "./NotoSansKR-Regular.woff";
+import OpenSansRegular from "./OpenSans-Regular.ttf";
 
-export default createGlobalStyle`
+const FontStyles = createGlobalStyle`
     @font-face {
         font-family: 'NotoSansRegular';
-        src: local('NotoSansRegular'), url(${NotoSansRegular}) format('woff');
+        src: url(${NotoSansRegular}) format('woff');
+    }
+    @font-face {
+        font-family: 'OpenSansRegular';
+        src: url(${OpenSansRegular}) format('ttf');
     }
 `;
+
+export default FontStyles;

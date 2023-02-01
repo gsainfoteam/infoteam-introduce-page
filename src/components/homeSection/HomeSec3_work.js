@@ -17,7 +17,7 @@ function HomeSec3Work() {
     <div className="section-container-col">
       <T.Title>
         주로 GIST 학생들에게 도움이 되는 <br />
-        <span style={{ color: "#FF6565" }}>웹서비스</span>
+        <span style={{ fontWeight: "bold" }}>웹서비스</span>
         들을 만들고,
       </T.Title>
       <div className="list-container" style={{ marginBottom: "80px" }}>

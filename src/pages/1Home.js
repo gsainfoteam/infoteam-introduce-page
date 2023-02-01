@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import PageupButton from "../components/button/PageupButton";
 import HomeSec1Main from "../components/homeSection/HomeSec1_main";
 import HomeSec2Info from "../components/homeSection/HomeSec2_info";

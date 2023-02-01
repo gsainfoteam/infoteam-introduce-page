@@ -4,11 +4,12 @@ import * as T from "../StyledText";
 import { workToolCardList } from "../../data/workToolCard_imgs";
 import useScrollFadeIn from "../../hooks/useScrollFade";
 
+// gray #fbfbfb white #ffffff
 const WorkToolCard_background = styled.div`
   margin: 10px 0px;
-  width: 150px;
-  height: 150px;
-  background-color: #fbfbfb;
+  width: 142px;
+  height: 142px;
+  background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1);
 
@@ -27,13 +28,15 @@ function HomeSec5WorkTool() {
 
   return (
     <div className="section-container-col" style={{}}>
-      <T.Title style={{ marginBlock: "50px 50px" }}>
-        인포팀이 일하는 방법
+      <T.Title style={{ marginBlock: "50px 40px" }}>
+        인포팀이 <span style={{ fontWeight: "bold" }}>일하는 방법</span>
       </T.Title>
-      <T.SubTitle>팀원으로서</T.SubTitle>
+      <T.SubTitle>
+        <span style={{}}>팀원</span>으로서
+      </T.SubTitle>
       <div
         className="list-container"
-        style={{ marginTop: "20px", marginBottom: "0px" }}
+        style={{ marginTop: "15px", marginBottom: "0px" }}
       >
         {workToolCardList.map((item, index) => {
           if (item.category == "teamTool")
@@ -49,22 +52,30 @@ function HomeSec5WorkTool() {
                     }}
                   />
                 </WorkToolCard_background>
-                <T.WorktoolText style={{ marginBottom: "50px" }}>
+                <T.WorktoolText style={{ marginBottom: "30px" }}>
                   {item.name}
                 </T.WorktoolText>
               </div>
             );
         })}
       </div>
-      <T.SubTitle>개발자로서</T.SubTitle>
+      <T.SubTitle>
+        <span style={{}}>개발자</span>로서
+      </T.SubTitle>
       <div
         className="list-container"
-        style={{ marginTop: "20px", marginBottom: "20px" }}
+        style={{ marginTop: "15px", marginBottom: "0px" }}
       >
         {workToolCardList.map((item, index) => {
           if (item.category == "devTool")
             return (
-              <div style={index != 0 ? { marginLeft: "37.5px" } : {}}>
+              <div
+                style={
+                  index != workToolCardList.length - 1
+                    ? { marginRight: "37.5px" }
+                    : {}
+                }
+              >
                 <WorkToolCard_background>
                   <img
                     src={item.imgSrc}

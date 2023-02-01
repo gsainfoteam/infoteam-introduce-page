@@ -43,6 +43,24 @@ function LinkButton({ category, linkpath }) {
         return null;
     }
   };
+  if (category == "github_profile")
+    return (
+      <LinkButtonWrap
+        onClick={() => window.open(linkpath, "_blank")}
+        style={{
+          width: "150px",
+          height: "28px",
+          paddingBottom: "2px",
+          marginTop: "6px",
+        }}
+      >
+        <img
+          src={githubIcon}
+          style={{ width: "20px", marginRight: "8px", paddingTop: "2px" }}
+        ></img>
+        <T.LinkButtonText>go to github</T.LinkButtonText>
+      </LinkButtonWrap>
+    );
   return (
     <LinkButtonWrap onClick={() => window.open(linkpath, "_blank")}>
       {iconSelect(category)}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
+import * as T from "../components/StyledText";
 import imgLogo from "../imgs/logoImgs/InfoteamLogo2.png";
 import imgLogoMini from "../imgs/logoImgs/InfoteamLogoMini.png";
 
@@ -12,7 +13,7 @@ const HeaderContainer = styled.div`
   box-shadow: ${(props) =>
     props.simplify ? "none" : "1px 1px 3px 1px rgba(0, 0, 0, 0.2)"};
   position: sticky;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   transition: 0.3s;
   &.hide {
@@ -37,10 +38,7 @@ const HeaderRightWrap = styled.div`
 `;
 
 const MenuButton = styled(NavLink)`
-  color: black;
-  text-decoration: none;
-  font-weight: normal;
-  font-size: 130%;
+  ${T.HeaderMenuText.componentStyle.rules[0]}
 
   padding: 10px;
   margin-right: 15px;

@@ -3,8 +3,10 @@ import notionIcon from "../imgs/worktoolCard/notionIcon.png";
 import figmaIcon from "../imgs/worktoolCard/figmaIcon.png";
 import gitIcon from "../imgs/worktoolCard/gitIcon.png";
 import githubIcon from "../imgs/worktoolCard/githubIcon.png";
+import typescriptIcon from "../imgs/worktoolCard/typescriptIcon.png";
 import reactIcon from "../imgs/worktoolCard/reactIcon.png";
-import flaskIcon from "../imgs/worktoolCard/flaskIcon.png";
+import nestIcon from "../imgs/worktoolCard/nestjsIcon.png";
+import dockerIcon from "../imgs/worktoolCard/dockerIcon.png";
 
 export const workToolCardList = [
   {
@@ -33,13 +35,23 @@ export const workToolCardList = [
     imgSrc: githubIcon,
   },
   {
+    name: "typescript",
+    category: "devTool",
+    imgSrc: typescriptIcon,
+  },
+  {
     name: "react",
     category: "devTool",
     imgSrc: reactIcon,
   },
   {
-    name: "flask",
+    name: "nest",
     category: "devTool",
-    imgSrc: flaskIcon,
+    imgSrc: nestIcon,
+  },
+  {
+    name: "docker",
+    category: "devTool",
+    imgSrc: dockerIcon,
   },
 ];
