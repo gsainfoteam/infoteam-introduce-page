@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import pageupIcon from "../../imgs/buttonImgs/pageup.png";
+import pageupIcon from "../../imgs/buttonImgs/pageup.svg";
 
 const PageupIcon = styled.img`
   margin: 20px 0px;

@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import * as T from "../StyledText";
+import { SectionContainerCol } from "../styled/StyledContainerGlobal";
+import * as T from "../styled/StyledText";
 
 const HorizonLine = styled.div`
+  margin: 10px 0px;
   width: 85%;
   border-bottom: 2px solid #000000;
-  margin: 10px 0px;
 `;
 
 const LittleInput = styled.input`
@@ -17,16 +18,15 @@ const LittleInput = styled.input`
   border: none;
   border-radius: 15px;
 
+  ${T.FormText.componentStyle.rules[0]}
+
   &:focus {
     outline: 0px solid #ff6565;
     box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1);
   }
-
   &::placeholder {
     color: #ad1717;
   }
-
-  ${T.FormText.componentStyle.rules[0]}
 `;
 const LargeInput = styled.textarea`
   margin: 10px;
@@ -39,17 +39,16 @@ const LargeInput = styled.textarea`
   border: none;
   border-radius: 15px;
 
+  vertical-align: top;
+  ${T.FormText.componentStyle.rules[0]}
+
   &:focus {
     outline: 0px solid #ff6565;
     box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.1);
   }
-
   &::placeholder {
     color: #000000;
   }
-
-  vertical-align: top;
-  ${T.FormText.componentStyle.rules[0]}
 `;
 
 const SubmitButton = styled.button`
@@ -59,12 +58,12 @@ const SubmitButton = styled.button`
   border-radius: 10px;
   border: none;
 
+  ${T.FormText.componentStyle.rules[0]}
+  font-weight: normal;
   color: white;
 
   cursor: pointer;
-
   transition: 0.1s;
-
   &:hover {
     background-color: #757575;
   }
@@ -72,16 +71,12 @@ const SubmitButton = styled.button`
     width: 105px;
     height: 38px;
   }
-
-  ${T.FormText.componentStyle.rules[0]}
-  font-weight: normal;
 `;
 
 function HomeSec6Recruit() {
   return (
-    <div
-      className="section-container-col"
-      style={{ backgroundColor: "#F5F5F5" }}
+    <SectionContainerCol
+      style={{ backgroundColor: "#F5F5F5", minHeight: "700px" }}
     >
       <T.Title style={{ marginBottom: "50px", fontSize: "50px" }}>
         인포팀에 바로 <span style={{ fontWeight: "bold" }}>지원</span>하기
@@ -109,7 +104,7 @@ function HomeSec6Recruit() {
       <div style={{ height: "50px" }}>
         <SubmitButton>제출하기</SubmitButton>
       </div>
-    </div>
+    </SectionContainerCol>
   );
 }
 

@@ -1,7 +1,8 @@
 import React from "react";
-import * as T from "../StyledText";
-import WorkEtcCardSet from "../WorkEtcCardSet";
+import * as T from "../styled/StyledText";
+import WorkEtcCardSet from "../card/WorkEtcCardSet";
 import useScrollFadeIn from "../../hooks/useScrollFade";
+import { SectionContainerCol } from "../styled/StyledContainerGlobal";
 
 function HomeSec4WorkEtc() {
   const animatedItem = {
@@ -12,16 +13,15 @@ function HomeSec4WorkEtc() {
   };
 
   return (
-    <div
-      className="section-container-col"
-      style={{ backgroundColor: "#F5F5F5" }}
+    <SectionContainerCol
+      style={{ backgroundColor: "#F5F5F5", minHeight: "820px" }}
     >
-      <T.Title>
+      <T.Title style={{ marginTop: "50px" }}>
         그리고 <span style={{ fontWeight: "bold" }}>다른 여러 일들</span>을
         합니다
       </T.Title>
       <WorkEtcCardSet />
-    </div>
+    </SectionContainerCol>
   );
 }
 

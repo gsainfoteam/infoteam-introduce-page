@@ -1,14 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import * as T from "../../components/StyledText";
+import * as T from "../styled/StyledText";
 import useScrollFadeIn from "../../hooks/useScrollFade";
-import infoBackImg from "../../imgs/webserviceImg.png";
+import infoBackImg from "../../imgs/webserviceImg.svg";
+import { SectionContainerCol } from "../styled/StyledContainerGlobal";
+import { MEDIA_QUERY_WIDTH_MOBILE_WIDTH } from "../../hooks/useIsMobile";
 
 const InfoWrap = styled.div`
   width: 885px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
+    flex-direction: column;
+  }
 `;
 const InfoBackImg = styled.img`
   z-index: 0;
@@ -18,6 +23,11 @@ const InfoBackImg = styled.img`
   width: 475px;
   object-fit: contain;
   border-radius: 10px;
+  @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
+    align-self: center;
+    width: 350px;
+    margin: 50px 0px 0px;
+  }
 `;
 
 function HomeSec2Info() {
@@ -28,21 +38,20 @@ function HomeSec2Info() {
     3: useScrollFadeIn("up", 2, 0.4),
   };
   return (
-    <div
-      className="section-container-col"
+    <SectionContainerCol
       style={{ backgroundColor: "#F5F5F5", paddingBlock: "0px" }}
     >
       <InfoWrap>
-        <T.Title style={{ fontSize: "50px", textAlign: "left", zIndex: "1" }}>
+        <T.InfoText>
           저희는 <br />
           GIST 학생들의 삶을 <br />
           <span style={{ fontWeight: "bold" }}>IT기술</span>을 이용해 <br />
           편리하게 <br />
-          만들고자 합니다.
-        </T.Title>
+          만들고자 합니다
+        </T.InfoText>
         <InfoBackImg src={infoBackImg} />
       </InfoWrap>
-    </div>
+    </SectionContainerCol>
   );
 }
 

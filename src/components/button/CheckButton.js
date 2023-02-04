@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import * as T from "../StyledText";
-import checkedIcon from "../../imgs/buttonImgs/checked.png";
-import uncheckedIcon from "../../imgs/buttonImgs/unchecked.png";
+import * as T from "../styled/StyledText";
+import checkedIcon from "../../imgs/buttonImgs/checked.svg";
+import uncheckedIcon from "../../imgs/buttonImgs/unchecked.svg";
 
 const CheckButtonWrap = styled.div`
   width: 120px;

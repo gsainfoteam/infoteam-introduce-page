@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import * as T from "../StyledText";
-import githubIcon from "../../imgs/buttonImgs/githubIcon.png";
-import webpageIcon from "../../imgs/buttonImgs/webpageIcon.png";
+import * as T from "../styled/StyledText";
+import githubIcon from "../../imgs/buttonImgs/githubIcon.svg";
+import webpageIcon from "../../imgs/buttonImgs/webpageIcon.svg";
 
 const LinkButtonWrap = styled.div`
   margin: 0px 35px;
@@ -36,7 +36,7 @@ function LinkButton({ category, linkpath }) {
         return (
           <img
             src={webpageIcon}
-            style={{ width: "17px", marginRight: "8px" }}
+            style={{ width: "22px", paddingTop: "2px", marginRight: "6px" }}
           ></img>
         );
       default:
@@ -58,7 +58,9 @@ function LinkButton({ category, linkpath }) {
           src={githubIcon}
           style={{ width: "20px", marginRight: "8px", paddingTop: "2px" }}
         ></img>
-        <T.LinkButtonText>go to github</T.LinkButtonText>
+        <T.LinkButtonText style={{ fontSize: "13px" }}>
+          go to github
+        </T.LinkButtonText>
       </LinkButtonWrap>
     );
   return (

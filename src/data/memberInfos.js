@@ -1,4 +1,4 @@
-const memberList = [
+const memberInfoList = [
   {
     name: "배설영",
     role: "frontend", // frontend, backend, both
@@ -100,10 +100,10 @@ const memberList = [
 ];
 
 // 팀원 카드 이름 가나다순으로 정렬
-memberList.sort(function (a, b) {
+memberInfoList.sort(function (a, b) {
   if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
   else if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
   else return 0;
 });
 
-export { memberList };
+export { memberInfoList };

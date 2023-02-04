@@ -1,10 +1,11 @@
-import useMediaQuery from "react-responsive";
+import { useMediaQuery } from "react-responsive";
+
+const MEDIA_QUERY_WIDTH_MOBILE_WIDTH = "900px"; // (768px보다 여유 둠)
 
 const useIsMobile = () => {
-  const MEDIA_QUERY_WIDTH_MOBILE_WIDTH = "max-width: 900px";
   return useMediaQuery({
-    query: `(${MEDIA_QUERY_WIDTH_MOBILE_WIDTH})`,
+    query: "(max-width: " + MEDIA_QUERY_WIDTH_MOBILE_WIDTH + ")",
   });
 };
 
-export default useIsMobile;
+export { useIsMobile, MEDIA_QUERY_WIDTH_MOBILE_WIDTH };
