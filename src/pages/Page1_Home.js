@@ -12,6 +12,7 @@ import HomeSecTest from "../components/homeSection/HomeSecTest_Move";
 
 const Page1Home = () => {
   const sec4Ref = useRef();
+  const { element: sec3Ref, onMoveToElement: onMoveToSec3 } = useMoveScroll();
 
   const onScroll = (sec) => {
     console.log("-->", sec);
@@ -25,11 +26,14 @@ const Page1Home = () => {
     <PageContainer>
       <HomeSec1Main />
       <HomeSec2Info />
-      <HomeSec3Work />
-      <HomeSec4WorkEtc ref={sec4Ref} />
+      <HomeSec3Work innerRef={sec3Ref} />
+      <HomeSec4WorkEtc innerRef={sec4Ref} />
       <HomeSec5WorkTool />
       {/* <PageupButton /> <HomeSec6Recruit /> */}
+      {/* 
+      <button onClick={() => onMoveToSec3()}>-----sec3으로 이동-----</button>
       <button onClick={() => onScroll(sec4Ref)}>sec4로 이동</button>
+      */}
     </PageContainer>
   );
 };

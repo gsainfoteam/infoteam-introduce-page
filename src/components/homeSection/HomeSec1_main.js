@@ -4,6 +4,7 @@ import InfoteamPinklogo from "../../imgs/logoImgs/InfoteamPinkLogo.svg";
 import { SectionContainerCol } from "../styled/StyledContainerGlobal";
 import { MEDIA_QUERY_WIDTH_MOBILE_WIDTH } from "../../hooks/useIsMobile";
 import styled from "styled-components";
+import useScrollFadeIn from "../../hooks/useScrollFade";
 
 const Logo = styled.img`
   width: 650px;
@@ -15,13 +16,17 @@ const Logo = styled.img`
 `;
 
 function HomeSec1Main() {
+  const animatedItem = {
+    0: useScrollFadeIn("up", 1.7, 0),
+    1: useScrollFadeIn("up", 1.7, 0.5),
+  };
   return (
     <SectionContainerCol>
       {/* [[ Main Logo - (1) Styled Text로 (2) Logo svg img로 ]] 
           <T.InfoteamLogo>Infoteam</T.InfoteamLogo> 
           <img src={InfoteamPinklogo} style={{ width: "650px", padding: "0px" }} /> */}
-      <Logo src={InfoteamPinklogo} style={{}} />
-      <T.LogoUnderText>
+      <Logo src={InfoteamPinklogo} style={{}} {...animatedItem[0]} />
+      <T.LogoUnderText {...animatedItem[1]}>
         저희는
         <span style={{ fontWeight: "bold", color: "#ff6565" }}>지스트</span>
         대학 총학생회

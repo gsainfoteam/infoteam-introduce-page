@@ -97,7 +97,7 @@ const blinkAnimation = keyframes`
   0%{
   }
   100%{
-    font-size: 30px;
+    font-size: 25px;
   }
 `;
 export const LinkText = styled.div`

@@ -32,14 +32,17 @@ const InfoBackImg = styled.img`
 
 function HomeSec2Info() {
   const animatedItem = {
-    0: useScrollFadeIn("up", 2, 0),
+    0: useScrollFadeIn("up", 0.5, 0),
     1: useScrollFadeIn("up", 2, 0.2),
     2: useScrollFadeIn("up", 2, 0.3),
     3: useScrollFadeIn("up", 2, 0.4),
   };
   return (
     <SectionContainerCol
-      style={{ backgroundColor: "#F5F5F5", paddingBlock: "0px" }}
+      style={{
+        backgroundColor: "#F5F5F5",
+        paddingBlock: "0px",
+      }}
     >
       <InfoWrap>
         <T.InfoText>

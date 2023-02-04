@@ -9,7 +9,7 @@ import {
 } from "../styled/StyledContainerGlobal";
 import { useIsMobile } from "../../hooks/useIsMobile";
 
-function HomeSec3Work() {
+function HomeSec3Work({ innerRef }) {
   const isMobile = useIsMobile();
   const navigate = useNavigate();
   const animatedItem = {
@@ -20,7 +20,7 @@ function HomeSec3Work() {
   };
 
   return (
-    <SectionContainerCol style={{ minHeight: "820px" }}>
+    <SectionContainerCol style={{ minHeight: "820px" }} ref={innerRef}>
       <T.Title style={{ marginTop: "50px" }}>
         주로 GIST 학생들에게 도움이 되는 <br />
         <span style={{ fontWeight: "bold" }}>웹서비스</span>
