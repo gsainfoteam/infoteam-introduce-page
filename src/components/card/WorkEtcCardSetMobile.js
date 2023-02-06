@@ -17,10 +17,10 @@ const WorkEtcCard_background_devnight = styled.div`
   position: relative;
   z-index: 0;
 
-  margin: 50px 15px;
-  width: 420px;
-  height: 450px;
-  border-radius: 20px;
+  margin-block: 2vw 10vw;
+  width: 70vw;
+  height: 70vw;
+  border-radius: 3.3vw;
   background-image: linear-gradient(0, #343244, #343244);
 
   display: flex;
@@ -34,7 +34,7 @@ const WorkEtcCard_background_devnight = styled.div`
     inset: 0 0 0 0;
     z-index: -1;
 
-    border-radius: 20px;
+    border-radius: 3.3vw;
     background-image: linear-gradient(
       180deg,
       #757384,
@@ -55,11 +55,10 @@ const WorkEtcCard_background_rect = styled.div`
   position: relative;
   z-index: 0;
 
-  margin: 30px 15px;
-  width: 420px;
-  height: 210px;
-  height: 210px;
-  border-radius: 20px;
+  margin-block: 0vw 10vw;
+  width: 70vw;
+  height: 35vw;
+  border-radius: 3.3vw;
   background-image: linear-gradient(0, #ffffff, #ffffff);
 
   display: flex;
@@ -72,7 +71,7 @@ const WorkEtcCard_background_rect = styled.div`
     inset: 0 0 0 0;
     z-index: -1;
 
-    border-radius: 20px;
+    border-radius: 3.3vw;
     ${(props) =>
       props.id == "nas" &&
       `background-image: linear-gradient(30deg, #BFBFBF, #D0D0D0, #ECECEC);`}
@@ -108,7 +107,7 @@ const CardColWrapper = styled.div`
   align-items: center;
 `;
 
-function WorkEtcCardSet() {
+function WorkEtcCardSetMobile() {
   const [isHoveredDN, setIsHoveredDN] = useState(false);
   const [isHoveredNAS, setIsHoveredNAS] = useState(false);
   const [isHoveredGDS, setIsHoveredGDS] = useState(false);
@@ -120,23 +119,23 @@ function WorkEtcCardSet() {
         onMouseOver={() => setIsHoveredDN(true)}
         onMouseOut={() => setIsHoveredDN(false)}
       >
-        <T.DevnightTitleText isHovering={isHoveredDN}>
-          <span style={{ fontSize: "50px" }}>
+        <T.DevnightTitleTextMobile isHovering={isHoveredDN}>
+          <span style={{ fontSize: "calc(20px + 5vw)" }}>
             <span style={{ color: "#E55D5D" }}>G</span>IST
           </span>
           <br /> Developers'
           {isHoveredDN ? <br /> : null} night
-        </T.DevnightTitleText>
-        <T.DevnightInfoText isHovering={isHoveredDN}>
+        </T.DevnightTitleTextMobile>
+        <T.DevnightInfoTextMobile isHovering={isHoveredDN}>
           데브나잇은 가을 밤 지스트에서 개발하는 모두를 위한 교류 행사입니다.
           크게 두가지 세션(세미나 세션, 네트워킹 세션)이 진행됩니다.
-        </T.DevnightInfoText>
+        </T.DevnightInfoTextMobile>
         {workEtcCardImgList.map((item) => {
           if (item.name == "devnight")
             return (
               <FadingImg
                 src={item.imgSrc}
-                style={{ width: "420px", position: "absolute", bottom: "0" }}
+                style={{ width: "70vw", position: "absolute", bottom: "0" }}
                 isHovering={isHoveredDN}
               />
             );
@@ -153,22 +152,22 @@ function WorkEtcCardSet() {
               return (
                 <FadingImg
                   src={item.imgSrc}
-                  style={{ height: "190px" }}
+                  style={{ height: "32vw" }}
                   isHovering={isHoveredNAS}
                 />
               );
           })}
-          <T.NasTitleText isHovering={isHoveredNAS}>
+          <T.NasTitleTextMobile isHovering={isHoveredNAS}>
             <span style={{ color: "#111111" }}>N</span>etwork
             <br />
             <span style={{ color: "#111111" }}>A</span>ttached
             <br />
             <span style={{ color: "#111111" }}>S</span>torage
-          </T.NasTitleText>
-          <T.NasInfoText isHovering={isHoveredNAS}>
+          </T.NasTitleTextMobile>
+          <T.NasInfoTextMobile isHovering={isHoveredNAS}>
             인포팀은 학생자치단체들의 각종 기록과 문서 보존을 목적으로 NAS를
             운영하고 있습니다
-          </T.NasInfoText>
+          </T.NasInfoTextMobile>
         </WorkEtcCard_background_rect>
         <WorkEtcCard_background_rect
           id={"gidaesaeng"}
@@ -180,12 +179,12 @@ function WorkEtcCardSet() {
               return (
                 <FadingImg
                   src={item.imgSrc}
-                  style={{ height: "190px" }}
+                  style={{ height: "32vw" }}
                   isHovering={isHoveredGDS}
                 />
               );
           })}
-          <T.GidaesaengTitleText isHovering={isHoveredGDS}>
+          <T.GidaesaengTitleTextMobile isHovering={isHoveredGDS}>
             지대생
             <br />
             <div style={{ color: "#1877F2" }}>
@@ -193,15 +192,15 @@ function WorkEtcCardSet() {
               <br />
               그룹
             </div>
-          </T.GidaesaengTitleText>
-          <T.GidaesaengInfoText isHovering={isHoveredGDS}>
+          </T.GidaesaengTitleTextMobile>
+          <T.GidaesaengInfoTextMobile isHovering={isHoveredGDS}>
             GIST 대학생 페이스북 그룹은 지스트대학 학생들이 서로 교류할 수 있는
             가장 큰 커뮤니티입니다
-          </T.GidaesaengInfoText>
+          </T.GidaesaengInfoTextMobile>
         </WorkEtcCard_background_rect>
       </CardColWrapper>
     </ListContainer>
   );
 }
 
-export default WorkEtcCardSet;
+export default WorkEtcCardSetMobile;

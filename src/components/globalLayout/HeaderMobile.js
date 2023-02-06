@@ -2,6 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import * as T from "../styled/StyledText";
+import {
+  MEDIA_QUERY_WIDTH_MOBILE_WIDTH,
+  useIsMobile,
+} from "../../hooks/useIsMobile";
 import navbarLogo from "../../imgs/logoImgs/IntroduceNavbarLogo3.svg";
 import navbarLogoMini from "../../imgs/logoImgs/IntroduceNavbarLogoMini.svg";
 
@@ -81,7 +85,8 @@ const throttle = function (callback, waitTime) {
 };
 
 /* header react component */
-function Header() {
+function HeaderMobile() {
+  const isMobile = useIsMobile();
   const [simplify, setSimplify] = useState(false); // 스크롤y값 0이면 simplify
   const [hide, setHide] = useState(false); // 일정 스크롤y값 이상부터, 스크롤 내리면 hide
   const [pageY, setPageY] = useState(0);
@@ -100,7 +105,6 @@ function Header() {
 
   useEffect(() => {
     documentRef.current.addEventListener("scroll", throttleScroll);
-    console.log("!!!!");
     return () =>
       documentRef.current.removeEventListener("scroll", throttleScroll);
   }, [pageY]);
@@ -111,13 +115,20 @@ function Header() {
         <HomeButton to="/">
           <LogoIcon src={navbarLogo} />
         </HomeButton>
-        <MenuWrap>
-          <MenuButton to="/service">services</MenuButton>
-          <MenuButton to="/member">members</MenuButton>
-        </MenuWrap>
+        {isMobile ? (
+          <MenuWrap>
+            <MenuButton to="/service">services</MenuButton>
+            <MenuButton to="/member">members</MenuButton>
+          </MenuWrap>
+        ) : (
+          <MenuWrap>
+            <MenuButton to="/service">services</MenuButton>
+            <MenuButton to="/member">members</MenuButton>
+          </MenuWrap>
+        )}
       </HeaderWrap>
     </HeaderContainer>
   );
 }
 
-export default Header;
+export default HeaderMobile;

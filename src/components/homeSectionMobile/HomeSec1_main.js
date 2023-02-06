@@ -2,39 +2,47 @@ import React from "react";
 import * as T from "../styled/StyledText";
 import InfoteamPinklogo from "../../imgs/logoImgs/InfoteamPinkLogo.svg";
 import { SectionContainerCol } from "../styled/StyledContainerGlobal";
-import { MEDIA_QUERY_WIDTH_MOBILE_WIDTH } from "../../hooks/useIsMobile";
 import styled from "styled-components";
 import useScrollFadeIn from "../../hooks/useScrollFade";
+import AboutButton from "../button/AboutButton";
 
 const Logo = styled.img`
-  width: 650px;
-  padding: 0px;
-  @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
-    width: 70vw;
-    min-width: 350px;
-  }
+  width: 70vw;
 `;
 
-function HomeSec1Main({ innerRefArr }) {
+function HomeSec1MainMobile({ innerRefArr }) {
   const animatedItem = {
     0: useScrollFadeIn("up", 1.7, 0),
-    1: useScrollFadeIn("up", 1.7, 0.5),
+    1: useScrollFadeIn("up", 1.7, 0.7),
+    2: useScrollFadeIn("up", 1.7, 1.5),
   };
+
   return (
-    <SectionContainerCol ref={(el) => (innerRefArr.current[0] = el)}>
-      {/* [[ Main Logo - (1) Styled Text로 (2) Logo svg img로 ]] 
-          <T.InfoteamLogo>Infoteam</T.InfoteamLogo> 
-          <img src={InfoteamPinklogo} style={{ width: "650px", padding: "0px" }} /> */}
+    <SectionContainerCol
+      style={{ height: "100vh" }}
+      ref={(el) => (innerRefArr.current[0] = el)}
+    >
+      <div
+        style={{
+          width: "100%",
+          height: "3px",
+          backgroundColor: "#ff6565",
+          position: "absolute",
+          top: "0px",
+        }}
+      />
       <Logo src={InfoteamPinklogo} {...animatedItem[0]} />
-      <T.LogoUnderText {...animatedItem[1]}>
+      <T.LogoUnderText style={{ color: "red" }} {...animatedItem[1]}>
         저희는
         <span style={{ fontWeight: "bold", color: "#ff6565" }}> 지스트</span>
         대학 총학생회
         <span style={{ fontWeight: "bold", color: "#ff6565" }}> 정보국</span>
         입니다
       </T.LogoUnderText>
+      <AboutButton secRefArr={innerRefArr} {...animatedItem[2]} />
+      <div style={{ height: "20px" }} />
     </SectionContainerCol>
   );
 }
 
-export default HomeSec1Main;
+export default HomeSec1MainMobile;

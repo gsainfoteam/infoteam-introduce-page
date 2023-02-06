@@ -27,7 +27,7 @@ export const LogoUnderText = styled.div`
   word-break: keep-all;
   @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
     margin-block: 15px 35px;
-    font-size: calc(10px + 2vw);
+    font-size: calc(7px + 2.5vw);
   }
 `;
 /* Home sec 2 */
@@ -39,9 +39,9 @@ export const InfoText = styled.div`
   text-align: left;
   z-index: 1;
   @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
-    margin-block: 30px;
+    margin-block: 10px;
     text-align: center;
-    font-size: calc(30px + 2vw);
+    font-size: calc(11px + 2vw);
   }
 `;
 /* Home sec 3~6 , Services , Members Title */
@@ -52,6 +52,7 @@ export const Title = styled.div`
   font-size: 40px;
   text-align: center;
   @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
+    margin-block: 1.6vw;
     font-size: calc(15px + 2vw);
   }
 `;
@@ -63,10 +64,11 @@ export const ToolSubTitle = styled.div`
   font-size: 30px;
   text-align: center;
   @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
-    font-size: calc(15px + 1vw);
+    margin-block: 3vw 1vw;
+    font-size: calc(5px + 3vw);
   }
 `;
-/* Home sec 5 - work tool name */
+/* << X >> Home sec 5 - work tool name */
 export const WorkToolName = styled.div`
   font-family: "Noto Sans KR", sans-serif;
   margin-block: 10px;
@@ -124,6 +126,7 @@ const dnTitleMoveIn = keyframes`
   100%{
     text-align: left;
     transform: translate(-50px, -17px); 
+
   }
 `;
 const nasTitleMoveIn = keyframes`
@@ -283,6 +286,182 @@ export const GidaesaengInfoText = styled.div`
   `}
 `;
 
+/* <<Mobile>> Home - WorkEtcCardSet 의 카드 속 text */
+export const WorkEtcSubtitleMobile = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  margin-block: 1.3vw;
+  line-height: 130%;
+  font-size: calc(5px + 2vw);
+  text-align: center;
+`;
+const dnTitleMoveInMobile = keyframes`
+  0%{
+    text-align: left;
+
+  }
+  100%{
+    text-align: left;
+    transform: translate(-7vw, -1vw); 
+
+  }
+`;
+const nasTitleMoveInMobile = keyframes`
+  0%{
+    text-align: left;
+
+  }
+  100%{
+    text-align: left;
+    margin-left: 1.6vw;
+    transform: translate(-30.8vw, 0px); 
+  }
+`;
+const nasTitleMoveOutMobile = keyframes`
+  0%{
+    text-align: left;
+    margin-left: 1.6vw;
+    transform: translate(-30.8vw, 0px); 
+  }
+  100%{
+    text-align: left;
+  }
+`;
+const gdsTitleMoveInMobile = keyframes`
+  0%{
+    text-align: left;
+
+  }
+  100%{
+    text-align: left;
+    transform: translate(-34.2vw, 0px); 
+  }
+`;
+const gdsTitleMoveOutMobile = keyframes`
+  0%{
+    text-align: left;
+    transform: translate(-34.2vw, 0px); 
+  }
+  100%{
+    text-align: left;
+  }
+`;
+export const DevnightTitleTextMobile = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  margin-top: calc(15px + 5vw);
+  margin-bottom: 0vw;
+  line-height: 130%;
+  color: white;
+  font-size: calc(7vw);
+  font-weight: bold;
+  text-align: center;
+
+  ${(props) =>
+    props.isHovering &&
+    css`
+      animation: ${dnTitleMoveInMobile} 0.4s linear forwards;
+    `}
+`;
+export const DevnightInfoTextMobile = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  position: absolute;
+  bottom: 5vw;
+  width: 56vw;
+  line-height: 130%;
+  color: white;
+  font-size: calc(2px + 3vw);
+  text-align: justify;
+
+  transition: opacity 0.5s linear, transform 0.5s linear;
+  ${(props) =>
+    props.isHovering
+      ? `
+      opacity: 1;
+      transform: translate(0px, -3.3vw);
+  `
+      : `
+      opacity: 0;
+  `}
+`;
+export const NasTitleTextMobile = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  margin-left: 8.3vw;
+  line-height: 115%;
+  color: #444444;
+  font-size: calc(6vw);
+  font-weight: bold;
+  text-align: right;
+
+  ${(props) =>
+    props.isHovering
+      ? css`
+          animation: ${nasTitleMoveInMobile} 0.5s linear forwards;
+        `
+      : css`
+          animation: ${nasTitleMoveOutMobile} 0.3s linear backwards; ;
+        `}
+`;
+export const NasInfoTextMobile = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  position: absolute;
+  left: 41vw;
+  width: 27vw;
+  line-height: 130%;
+  font-size: calc(1px + 3vw);
+  text-align: right;
+  text-align: justify;
+  direction: rtl;
+
+  transition: opacity 0.4s linear, transform 0.4s linear;
+  ${(props) =>
+    props.isHovering
+      ? `
+      opacity: 1;
+      transform: translate(-3.3vw, 0);
+  `
+      : `
+      opacity: 0;
+  `}
+`;
+export const GidaesaengTitleTextMobile = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 1.6vw 1.6vw;
+  line-height: 115%;
+  color: #1d4a84;
+  font-size: calc(6vw);
+  font-weight: bold;
+  text-align: right;
+
+  ${(props) =>
+    props.isHovering
+      ? css`
+          animation: ${gdsTitleMoveInMobile} 0.5s linear forwards;
+        `
+      : css`
+          animation: ${gdsTitleMoveOutMobile} 0.3s linear backwards; ;
+        `}
+`;
+export const GidaesaengInfoTextMobile = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  position: absolute;
+  left: 41vw;
+  width: 27vw;
+  line-height: 130%;
+  font-size: calc(1px + 3vw);
+  text-align: justify;
+  direction: rtl;
+
+  transition: opacity 0.4s linear, transform 0.4s linear;
+  ${(props) =>
+    props.isHovering
+      ? `
+      opacity: 1;
+      transform: translate(-3.3vw, 0);
+  `
+      : `
+      opacity: 0;
+  `}
+`;
+
 /* Home - Worktool 의 카드 이름 text */
 export const WorktoolText = styled.div`
   font-family: "Noto Sans KR", sans-serif;
@@ -291,6 +470,9 @@ export const WorktoolText = styled.div`
   color: black;
   font-size: 20px;
   text-align: center;
+  @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
+    font-size: calc(1px + 3vw);
+  }
 `;
 
 /* Home - Form 속 text */
@@ -313,7 +495,6 @@ export const ServiceName = styled.div`
   font-weight: bold;
   text-align: center;
 `;
-
 export const ServiceInfo = styled.div`
   font-family: "Noto Sans KR", sans-serif;
   margin-block: 20px;
@@ -323,6 +504,14 @@ export const ServiceInfo = styled.div`
   font-size: 15px;
   text-align: center;
   word-break: keep-all;
+`;
+export const ServiceInfoMobile = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  width: 100%;
+  line-height: 150%;
+  font-size: calc(2px + 2vw);
+  text-align: justify;
+  //word-break: keep-all;
 `;
 
 /* Member info card ; text */
@@ -354,9 +543,17 @@ const Normal = styled.div`
 */
 
 /* Button */
+export const AboutButtonText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: calc(12px + 0.6vw);
+  color: white;
+`;
 export const LinkButtonText = styled.div`
   font-family: "Noto Sans KR", sans-serif;
   font-size: 15px;
+  @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
+    font-size: calc(2px + 2vw);
+  }
 `;
 export const CheckButtonText = styled.div`
   font-family: "Noto Sans KR", sans-serif;

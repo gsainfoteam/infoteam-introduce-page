@@ -20,37 +20,23 @@ export const RedRoundRectCard = styled.div`
   color: #ffffff;
   font-weight: bold;
   text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
-/* Home cards - work 2 (etcWork) ==> 이거는 따로 파일 만들어서 관리 */
-
-/* Home cards - workTool (teamTool & devTool) */
-const WorkToolCard_background = styled.div`
-  margin: 45px;
-  width: 200px;
-  height: 200px;
-  background-color: #fbfbfb;
-  border-radius: 20px;
-  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
-
+export const RedRoundRectCardMobile = styled.div`
+  margin: 4vw 6vw;
+  width: 40.5vw;
+  height: 26.6vw;
+  background-color: #ff6565;
+  border-radius: 8.3vw;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  line-height: 130%;
+  font-size: 40px;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
 `;
-
-function WorkToolCard({ name, category, image_path }) {
-  return (
-    <div style={{}}>
-      <WorkToolCard_background>
-        <img src={image_path} style={{ width: "270px" }} />
-      </WorkToolCard_background>
-      <T.WorkToolName style={{ fontWeight: "bold" }}>{name}</T.WorkToolName>
-    </div>
-  );
-}
-
-/* Home cards - work 2 (etcWork) */
-
-/* Default gray cards (RED ; #FF6565) */
-
-export default { WorkToolCard };

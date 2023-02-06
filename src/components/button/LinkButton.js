@@ -3,6 +3,10 @@ import styled from "styled-components";
 import * as T from "../styled/StyledText";
 import githubIcon from "../../imgs/buttonImgs/githubIcon.svg";
 import webpageIcon from "../../imgs/buttonImgs/webpageIcon.svg";
+import {
+  useIsMobile,
+  MEDIA_QUERY_WIDTH_MOBILE_WIDTH,
+} from "../../hooks/useIsMobile";
 
 const LinkButtonWrap = styled.div`
   margin: 0px 35px;
@@ -20,23 +24,39 @@ const LinkButtonWrap = styled.div`
   &:hover {
     background-color: #e5e5e5;
   }
+
+  @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
+    margin: 1vw 0vw;
+    width: 18vw;
+    height: 6vw;
+    border-radius: 3vw;
+  }
 `;
 
 function LinkButton({ category, linkpath }) {
+  const isMobile = useIsMobile();
   const iconSelect = (category) => {
     switch (category) {
       case "github":
         return (
           <img
             src={githubIcon}
-            style={{ width: "20px", marginRight: "8px" }}
+            style={
+              isMobile
+                ? { width: "2.9vw", marginRight: "1.4vw" }
+                : { width: "20px", marginRight: "8px" }
+            }
           ></img>
         );
       case "page":
         return (
           <img
             src={webpageIcon}
-            style={{ width: "22px", paddingTop: "2px", marginRight: "6px" }}
+            style={
+              isMobile
+                ? { width: "3.6vw", paddingTop: "0.3vw", marginRight: "1vw" }
+                : { width: "22px", paddingTop: "2px", marginRight: "6px" }
+            }
           ></img>
         );
       default:

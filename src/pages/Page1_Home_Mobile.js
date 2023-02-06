@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { PageContainer } from "../components/styled/StyledContainerGlobal";
-import HomeSec1Main from "../components/homeSection/HomeSec1_main";
-import HomeSec2Info from "../components/homeSection/HomeSec2_info";
-import HomeSec3Work from "../components/homeSection/HomeSec3_work";
-import HomeSec4WorkEtc from "../components/homeSection/HomeSec4_worketc";
-import HomeSec5WorkTool from "../components/homeSection/HomeSec5_worktool";
+import HomeSec1MainMobile from "../components/homeSectionMobile/HomeSec1_main";
+import HomeSec2InfoMobile from "../components/homeSectionMobile/HomeSec2_info";
+import HomeSec3WorkMobile from "../components/homeSectionMobile/HomeSec3_work";
+import HomeSec4WorkEtcMobile from "../components/homeSectionMobile/HomeSec4_worketc";
+import HomeSec5WorkToolMobile from "../components/homeSectionMobile/HomeSec5_worktool";
 // import PageupButton from "../components/button/PageupButton";
 // import HomeSec6Recruit from "../components/homeSection/HomeSec6_recruit";
 // import useMoveScroll from "../hooks/useMoveScroll";
@@ -35,8 +35,8 @@ const debounce = function (callback, waitTime) {
   };
 };
 
-/* Page1Home */
-const Page1Home = () => {
+/* Page1HomeMobile */
+const Page1HomeMobile = () => {
   const secRefArrLength = 5;
   const secRefArr = useRef([]);
 
@@ -84,13 +84,13 @@ const Page1Home = () => {
   // return ---------------------------------------------------------------------
   return (
     <PageContainer>
-      <HomeSec1Main innerRefArr={secRefArr} />
-      <HomeSec2Info innerRefArr={secRefArr} />
-      <HomeSec3Work innerRefArr={secRefArr} />
-      <HomeSec4WorkEtc innerRefArr={secRefArr} />
-      <HomeSec5WorkTool innerRefArr={secRefArr} />
+      <HomeSec1MainMobile innerRefArr={secRefArr} />
+      <HomeSec2InfoMobile innerRefArr={secRefArr} />
+      <HomeSec3WorkMobile innerRefArr={secRefArr} />
+      <HomeSec4WorkEtcMobile innerRefArr={secRefArr} />
+      <HomeSec5WorkToolMobile innerRefArr={secRefArr} />
     </PageContainer>
   );
 };
 
-export default Page1Home;
+export default Page1HomeMobile;
