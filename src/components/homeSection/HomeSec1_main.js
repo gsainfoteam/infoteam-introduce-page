@@ -15,17 +15,17 @@ const Logo = styled.img`
   }
 `;
 
-function HomeSec1Main() {
+function HomeSec1Main({ innerRefArr }) {
   const animatedItem = {
     0: useScrollFadeIn("up", 1.7, 0),
     1: useScrollFadeIn("up", 1.7, 0.5),
   };
   return (
-    <SectionContainerCol>
+    <SectionContainerCol ref={(el) => (innerRefArr.current[0] = el)}>
       {/* [[ Main Logo - (1) Styled Text로 (2) Logo svg img로 ]] 
           <T.InfoteamLogo>Infoteam</T.InfoteamLogo> 
           <img src={InfoteamPinklogo} style={{ width: "650px", padding: "0px" }} /> */}
-      <Logo src={InfoteamPinklogo} style={{}} {...animatedItem[0]} />
+      <Logo src={InfoteamPinklogo} {...animatedItem[0]} />
       <T.LogoUnderText {...animatedItem[1]}>
         저희는
         <span style={{ fontWeight: "bold", color: "#ff6565" }}>지스트</span>

@@ -30,12 +30,10 @@ const InfoBackImg = styled.img`
   }
 `;
 
-function HomeSec2Info() {
+function HomeSec2Info({ innerRefArr }) {
   const animatedItem = {
-    0: useScrollFadeIn("up", 0.5, 0),
+    0: useScrollFadeIn("up", 1, 0),
     1: useScrollFadeIn("up", 2, 0.2),
-    2: useScrollFadeIn("up", 2, 0.3),
-    3: useScrollFadeIn("up", 2, 0.4),
   };
   return (
     <SectionContainerCol
@@ -43,9 +41,10 @@ function HomeSec2Info() {
         backgroundColor: "#F5F5F5",
         paddingBlock: "0px",
       }}
+      ref={(el) => (innerRefArr.current[1] = el)}
     >
       <InfoWrap>
-        <T.InfoText>
+        <T.InfoText {...animatedItem[0]}>
           저희는 <br />
           GIST 학생들의 삶을 <br />
           <span style={{ fontWeight: "bold" }}>IT기술</span>을 이용해 <br />

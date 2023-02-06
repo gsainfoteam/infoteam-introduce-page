@@ -42,17 +42,17 @@ export const workToolCardImgList = [
     imgSrc: typescriptIcon,
   },
   {
-    name: "react",
+    name: "React",
     category: "devTool",
     imgSrc: reactIcon,
   },
   {
-    name: "nest",
+    name: "NestJS",
     category: "devTool",
     imgSrc: nestIcon,
   },
   {
-    name: "docker",
+    name: "Docker",
     category: "devTool",
     imgSrc: dockerIcon,
   },

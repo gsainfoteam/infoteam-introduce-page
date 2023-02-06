@@ -73,10 +73,11 @@ const SubmitButton = styled.button`
   }
 `;
 
-function HomeSec6Recruit() {
+function HomeSec6Recruit({ innerRefArr }) {
   return (
     <SectionContainerCol
       style={{ backgroundColor: "#F5F5F5", minHeight: "700px" }}
+      ref={(el) => (innerRefArr.current[5] = el)}
     >
       <T.Title style={{ marginBottom: "50px", fontSize: "50px" }}>
         인포팀에 바로 <span style={{ fontWeight: "bold" }}>지원</span>하기

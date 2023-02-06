@@ -12,6 +12,7 @@ const MemberContainer = styled.div`
 
   @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
     width: 50%;
+    max-width: 350px;
   }
 `;
 

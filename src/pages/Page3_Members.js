@@ -9,7 +9,7 @@ import {
 } from "../components/styled/StyledContainerGlobal";
 import Member from "../components/card/Member";
 import CheckButton from "../components/button/CheckButton";
-import MemberList from "../components/card/MemberList";
+import ConditionalMemberList from "../components/card/ConditionalMemberList";
 import { memberInfoList } from "../data/memberInfos";
 
 const Page3Members = () => {

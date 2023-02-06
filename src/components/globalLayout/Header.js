@@ -6,7 +6,7 @@ import {
   MEDIA_QUERY_WIDTH_MOBILE_WIDTH,
   useIsMobile,
 } from "../../hooks/useIsMobile";
-import navbarLogo from "../../imgs/logoImgs/IntroduceNavbarLogo2.svg";
+import navbarLogo from "../../imgs/logoImgs/IntroduceNavbarLogo3.svg";
 import navbarLogoMini from "../../imgs/logoImgs/IntroduceNavbarLogoMini.svg";
 
 /* styled-components */

@@ -23,7 +23,7 @@ const WorkToolCard_background = styled.div`
   align-items: center;
 `;
 
-function HomeSec5WorkTool() {
+function HomeSec5WorkTool({ innerRefArr }) {
   const isMobile = useIsMobile();
   const animatedItem = {
     0: useScrollFadeIn("up", 2, 0),
@@ -33,7 +33,10 @@ function HomeSec5WorkTool() {
   };
 
   return (
-    <SectionContainerCol style={{ minHeight: "700px" }}>
+    <SectionContainerCol
+      style={{ minHeight: "700px" }}
+      ref={(el) => (innerRefArr.current[4] = el)}
+    >
       <T.Title style={{ marginBlock: "50px 40px" }}>
         인포팀이 <span style={{ fontWeight: "bold" }}>일하는 방법</span>
       </T.Title>

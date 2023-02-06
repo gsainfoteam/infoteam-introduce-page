@@ -4,7 +4,7 @@ import WorkEtcCardSet from "../card/WorkEtcCardSet";
 import useScrollFadeIn from "../../hooks/useScrollFade";
 import { SectionContainerCol } from "../styled/StyledContainerGlobal";
 
-function HomeSec4WorkEtc({ innerRef }) {
+function HomeSec4WorkEtc({ innerRefArr }) {
   const animatedItem = {
     0: useScrollFadeIn("up", 2, 0),
     1: useScrollFadeIn("up", 2, 0.2),
@@ -15,7 +15,7 @@ function HomeSec4WorkEtc({ innerRef }) {
   return (
     <SectionContainerCol
       style={{ backgroundColor: "#F5F5F5", minHeight: "820px" }}
-      ref={innerRef}
+      ref={(el) => (innerRefArr.current[3] = el)}
     >
       <T.Title style={{ marginTop: "50px" }}>
         그리고 <span style={{ fontWeight: "bold" }}>다른 여러 일들</span>을

@@ -4,7 +4,7 @@ import Member from "./Member";
 import { memberInfoList } from "../../data/memberInfos";
 import { ListContainer } from "../styled/StyledContainerGlobal";
 
-function MemberList({ isCheckedFE, isCheckedBE }) {
+function ConditionalMemberList({ isCheckedFE, isCheckedBE }) {
   const [conditionalMemberList, setConditionalMemberList] =
     useState(memberInfoList);
 
@@ -36,4 +36,4 @@ function MemberList({ isCheckedFE, isCheckedBE }) {
   );
 }
 
-export default MemberList;
+export default ConditionalMemberList;

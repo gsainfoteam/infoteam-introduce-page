@@ -35,8 +35,5 @@ export const ListContainer = styled.div`
 
   @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
     width: 100%;
-    & > img {
-      width: 50%;
-    }
   }
 `;
