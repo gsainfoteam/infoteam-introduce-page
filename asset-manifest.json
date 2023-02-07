@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/infoteam-introduce-page/static/css/main.bfee6c1c.css",
-    "main.js": "/infoteam-introduce-page/static/js/main.d4e737f6.js",
+    "main.js": "/infoteam-introduce-page/static/js/main.bd074af9.js",
     "static/media/gistoryImg.svg": "/infoteam-introduce-page/static/media/gistoryImg.0273607a84d5bc911162a48103b75aec.svg",
     "static/media/devnight.svg": "/infoteam-introduce-page/static/media/devnight.b43944b3785f4efaf8647a8c1c551f88.svg",
     "static/media/nas.svg": "/infoteam-introduce-page/static/media/nas.5a974556bf48c52a85d648b84929a34e.svg",
@@ -31,10 +31,10 @@
     "static/media/unchecked.svg": "/infoteam-introduce-page/static/media/unchecked.d65d840731712f139ea7449ed498b0a9.svg",
     "index.html": "/infoteam-introduce-page/index.html",
     "main.bfee6c1c.css.map": "/infoteam-introduce-page/static/css/main.bfee6c1c.css.map",
-    "main.d4e737f6.js.map": "/infoteam-introduce-page/static/js/main.d4e737f6.js.map"
+    "main.bd074af9.js.map": "/infoteam-introduce-page/static/js/main.bd074af9.js.map"
   },
   "entrypoints": [
     "static/css/main.bfee6c1c.css",
-    "static/js/main.d4e737f6.js"
+    "static/js/main.bd074af9.js"
   ]
 }
