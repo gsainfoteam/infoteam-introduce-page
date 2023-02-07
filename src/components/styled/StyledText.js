@@ -106,15 +106,59 @@ export const LinkText = styled.div`
   font-family: "Noto Sans KR", sans-serif;
   margin-block: 10px;
   line-height: 130%;
-  font-size: 20px;
+  font-size: 23px;
   text-align: center;
   word-break: keep-all;
   cursor: pointer;
-  animation: ${blinkAnimation} 0.8s linear infinite alternate;
-  transition: 0.8s linear;
+  animation: ${blinkAnimation} 1s linear infinite alternate;
+  transition: 0.6s linear;
   &:hover {
     color: #ff6565;
   }
+`;
+
+/* Home - WorkCardSet 의 카드 속 text */
+export const WorkTitleText = styled.div`
+  position: absolute;
+
+  line-height: 130%;
+  font-size: 40px;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+
+  opacity: 1;
+
+  transition: 0.5s linear;
+  ${(props) =>
+    props.isHovering &&
+    css`
+      opacity: 0;
+      transform: translateY(10px);
+    `}
+`;
+export const WorkInfoText = styled.div`
+  position: absolute;
+
+  line-height: 120%;
+  font-size: 26px;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+
+  opacity: 0;
+
+  bottom: 46px;
+
+  transition: 0.5s linear;
+  ${(props) =>
+    props.isHovering &&
+    css`
+      opacity: 1;
+      transform: translateY(-3px);
+    `}
 `;
 
 /* Home - WorkEtcCardSet 의 카드 속 text */

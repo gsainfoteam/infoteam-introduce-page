@@ -29,7 +29,7 @@ function AboutButton({ secRefArr }) {
   const [secRefCur, setSecRefCur] = useState(null);
   const moveToSec = (secRefCur) => {
     if (secRefCur) {
-      secRefCur.scrollIntoView({ behavior: "smooth", block: "start" });
+      secRefCur.scrollIntoView({ behavior: "smooth", block: "start" }); // safari behavior: "smooth" 오류 있다고 함.
     }
   };
   useEffect(() => {

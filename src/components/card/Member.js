@@ -22,7 +22,7 @@ const MemberCard = styled.div`
   width: 270px;
   height: 160px;
   background-color: #f5f5f5;
-  border-radius: 20px;
+  border-radius: 25px;
 
   display: flex;
   flex-direction: column;

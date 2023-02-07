@@ -3,7 +3,7 @@ import * as T from "../styled/StyledText";
 import InfoteamPinklogo from "../../imgs/logoImgs/InfoteamPinkLogo.svg";
 import { SectionContainerCol } from "../styled/StyledContainerGlobal";
 import styled from "styled-components";
-import useScrollFadeIn from "../../hooks/useScrollFade";
+import { useScrollFadeIn } from "../../hooks/useScrollFade";
 import AboutButton from "../button/AboutButton";
 
 const Logo = styled.img`
@@ -13,8 +13,8 @@ const Logo = styled.img`
 function HomeSec1MainMobile({ innerRefArr }) {
   const animatedItem = {
     0: useScrollFadeIn("up", 1.7, 0),
-    1: useScrollFadeIn("up", 1.7, 0.7),
-    2: useScrollFadeIn("up", 1.7, 1.5),
+    1: useScrollFadeIn("up", 1.7, 0.5),
+    2: useScrollFadeIn("up", 1.7, 1.0),
   };
 
   return (
@@ -25,7 +25,7 @@ function HomeSec1MainMobile({ innerRefArr }) {
       <div
         style={{
           width: "100%",
-          height: "3px",
+          height: "4px",
           backgroundColor: "#ff6565",
           position: "absolute",
           top: "0px",
@@ -39,7 +39,10 @@ function HomeSec1MainMobile({ innerRefArr }) {
         <span style={{ fontWeight: "bold", color: "#ff6565" }}> 정보국</span>
         입니다
       </T.LogoUnderText>
-      <AboutButton secRefArr={innerRefArr} {...animatedItem[2]} />
+      <div {...animatedItem[2]}>
+        <AboutButton secRefArr={innerRefArr} />
+      </div>
+
       <div style={{ height: "20px" }} />
     </SectionContainerCol>
   );

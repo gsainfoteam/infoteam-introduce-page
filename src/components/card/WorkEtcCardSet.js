@@ -55,9 +55,8 @@ const WorkEtcCard_background_rect = styled.div`
   position: relative;
   z-index: 0;
 
-  margin: 30px 15px;
+  margin: 15px 15px;
   width: 420px;
-  height: 210px;
   height: 210px;
   border-radius: 20px;
   background-image: linear-gradient(0, #ffffff, #ffffff);
@@ -106,99 +105,106 @@ const CardColWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `;
 
-function WorkEtcCardSet() {
+function WorkEtcCardSet({ animatedItem }) {
   const [isHoveredDN, setIsHoveredDN] = useState(false);
   const [isHoveredNAS, setIsHoveredNAS] = useState(false);
   const [isHoveredGDS, setIsHoveredGDS] = useState(false);
 
   return (
     <ListContainer>
-      <WorkEtcCard_background_devnight
-        id={"devnight"}
-        onMouseOver={() => setIsHoveredDN(true)}
-        onMouseOut={() => setIsHoveredDN(false)}
-      >
-        <T.DevnightTitleText isHovering={isHoveredDN}>
-          <span style={{ fontSize: "50px" }}>
-            <span style={{ color: "#E55D5D" }}>G</span>IST
-          </span>
-          <br /> Developers'
-          {isHoveredDN ? <br /> : null} night
-        </T.DevnightTitleText>
-        <T.DevnightInfoText isHovering={isHoveredDN}>
-          데브나잇은 가을 밤 지스트에서 개발하는 모두를 위한 교류 행사입니다.
-          크게 두가지 세션(세미나 세션, 네트워킹 세션)이 진행됩니다.
-        </T.DevnightInfoText>
-        {workEtcCardImgList.map((item) => {
-          if (item.name == "devnight")
-            return (
-              <FadingImg
-                src={item.imgSrc}
-                style={{ width: "420px", position: "absolute", bottom: "0" }}
-                isHovering={isHoveredDN}
-              />
-            );
-        })}
-      </WorkEtcCard_background_devnight>
+      <div {...animatedItem[1]}>
+        <WorkEtcCard_background_devnight
+          id={"devnight"}
+          onMouseOver={() => setIsHoveredDN(true)}
+          onMouseOut={() => setIsHoveredDN(false)}
+        >
+          <T.DevnightTitleText isHovering={isHoveredDN}>
+            <span style={{ fontSize: "50px" }}>
+              <span style={{ color: "#E55D5D" }}>G</span>IST
+            </span>
+            <br /> Developers'
+            {isHoveredDN ? <br /> : null} night
+          </T.DevnightTitleText>
+          <T.DevnightInfoText isHovering={isHoveredDN}>
+            데브나잇은 가을 밤 지스트에서 개발하는 모두를 위한 교류 행사입니다.
+            크게 두가지 세션(세미나 세션, 네트워킹 세션)이 진행됩니다.
+          </T.DevnightInfoText>
+          {workEtcCardImgList.map((item) => {
+            if (item.name == "devnight")
+              return (
+                <FadingImg
+                  src={item.imgSrc}
+                  style={{ width: "420px", position: "absolute", bottom: "0" }}
+                  isHovering={isHoveredDN}
+                />
+              );
+          })}
+        </WorkEtcCard_background_devnight>
+      </div>
       <CardColWrapper>
-        <WorkEtcCard_background_rect
-          id={"nas"}
-          onMouseOver={() => setIsHoveredNAS(true)}
-          onMouseOut={() => setIsHoveredNAS(false)}
-        >
-          {workEtcCardImgList.map((item) => {
-            if (item.name == "nas")
-              return (
-                <FadingImg
-                  src={item.imgSrc}
-                  style={{ height: "190px" }}
-                  isHovering={isHoveredNAS}
-                />
-              );
-          })}
-          <T.NasTitleText isHovering={isHoveredNAS}>
-            <span style={{ color: "#111111" }}>N</span>etwork
-            <br />
-            <span style={{ color: "#111111" }}>A</span>ttached
-            <br />
-            <span style={{ color: "#111111" }}>S</span>torage
-          </T.NasTitleText>
-          <T.NasInfoText isHovering={isHoveredNAS}>
-            인포팀은 학생자치단체들의 각종 기록과 문서 보존을 목적으로 NAS를
-            운영하고 있습니다
-          </T.NasInfoText>
-        </WorkEtcCard_background_rect>
-        <WorkEtcCard_background_rect
-          id={"gidaesaeng"}
-          onMouseOver={() => setIsHoveredGDS(true)}
-          onMouseOut={() => setIsHoveredGDS(false)}
-        >
-          {workEtcCardImgList.map((item) => {
-            if (item.name == "gidaesaeng")
-              return (
-                <FadingImg
-                  src={item.imgSrc}
-                  style={{ height: "190px" }}
-                  isHovering={isHoveredGDS}
-                />
-              );
-          })}
-          <T.GidaesaengTitleText isHovering={isHoveredGDS}>
-            지대생
-            <br />
-            <div style={{ color: "#1877F2" }}>
-              facebook
+        <div {...animatedItem[2]}>
+          <WorkEtcCard_background_rect
+            id={"nas"}
+            onMouseOver={() => setIsHoveredNAS(true)}
+            onMouseOut={() => setIsHoveredNAS(false)}
+          >
+            {workEtcCardImgList.map((item) => {
+              if (item.name == "nas")
+                return (
+                  <FadingImg
+                    src={item.imgSrc}
+                    style={{ height: "190px" }}
+                    isHovering={isHoveredNAS}
+                  />
+                );
+            })}
+            <T.NasTitleText isHovering={isHoveredNAS}>
+              <span style={{ color: "#111111" }}>N</span>etwork
               <br />
-              그룹
-            </div>
-          </T.GidaesaengTitleText>
-          <T.GidaesaengInfoText isHovering={isHoveredGDS}>
-            GIST 대학생 페이스북 그룹은 지스트대학 학생들이 서로 교류할 수 있는
-            가장 큰 커뮤니티입니다
-          </T.GidaesaengInfoText>
-        </WorkEtcCard_background_rect>
+              <span style={{ color: "#111111" }}>A</span>ttached
+              <br />
+              <span style={{ color: "#111111" }}>S</span>torage
+            </T.NasTitleText>
+            <T.NasInfoText isHovering={isHoveredNAS}>
+              인포팀은 학생자치단체들의 각종 기록과 문서 보존을 목적으로 NAS를
+              운영하고 있습니다
+            </T.NasInfoText>
+          </WorkEtcCard_background_rect>
+        </div>
+        <div {...animatedItem[3]}>
+          <WorkEtcCard_background_rect
+            id={"gidaesaeng"}
+            onMouseOver={() => setIsHoveredGDS(true)}
+            onMouseOut={() => setIsHoveredGDS(false)}
+          >
+            {workEtcCardImgList.map((item) => {
+              if (item.name == "gidaesaeng")
+                return (
+                  <FadingImg
+                    src={item.imgSrc}
+                    style={{ height: "190px" }}
+                    isHovering={isHoveredGDS}
+                  />
+                );
+            })}
+            <T.GidaesaengTitleText isHovering={isHoveredGDS}>
+              지대생
+              <br />
+              <div style={{ color: "#1877F2" }}>
+                facebook
+                <br />
+                그룹
+              </div>
+            </T.GidaesaengTitleText>
+            <T.GidaesaengInfoText isHovering={isHoveredGDS}>
+              GIST 대학생 페이스북 그룹은 지스트대학 학생들이 서로 교류할 수
+              있는 가장 큰 커뮤니티입니다
+            </T.GidaesaengInfoText>
+          </WorkEtcCard_background_rect>
+        </div>
       </CardColWrapper>
     </ListContainer>
   );

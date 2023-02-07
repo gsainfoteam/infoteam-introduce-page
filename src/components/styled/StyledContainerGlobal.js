@@ -3,7 +3,7 @@ import { MEDIA_QUERY_WIDTH_MOBILE_WIDTH } from "../../hooks/useIsMobile";
 
 export const PageContainer = styled.div`
   margin: 0 auto;
-  padding-bottom: 200px;
+  padding-bottom: 50px;
 
   display: flex;
   flex-direction: column;
@@ -11,6 +11,9 @@ export const PageContainer = styled.div`
 
   /*max-width: 1400px;
   padding: 32px 0;  */
+  @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
+    padding-bottom: 20vh;
+  }
 `;
 
 export const SectionContainerCol = styled.div`

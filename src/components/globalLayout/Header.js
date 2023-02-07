@@ -82,7 +82,7 @@ const throttle = function (callback, waitTime) {
 
 /* header react component */
 function Header() {
-  const [simplify, setSimplify] = useState(false); // 스크롤y값 0이면 simplify
+  const [simplify, setSimplify] = useState(true); // 스크롤y값 0이면 simplify
   const [hide, setHide] = useState(false); // 일정 스크롤y값 이상부터, 스크롤 내리면 hide
   const [pageY, setPageY] = useState(0);
   const documentRef = useRef(document);
@@ -100,7 +100,6 @@ function Header() {
 
   useEffect(() => {
     documentRef.current.addEventListener("scroll", throttleScroll);
-    console.log("!!!!");
     return () =>
       documentRef.current.removeEventListener("scroll", throttleScroll);
   }, [pageY]);
