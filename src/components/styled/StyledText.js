@@ -609,3 +609,10 @@ export const GoToCompButtonText = styled.div`
   font-family: "Noto Sans KR", sans-serif;
   font-size: 15px;
 `;
+export const PageBackButtonText = styled.div`
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+  @media only screen and (max-width: ${MEDIA_QUERY_WIDTH_MOBILE_WIDTH}) {
+    font-size: calc(10px + 1vw);
+  }
+`;
