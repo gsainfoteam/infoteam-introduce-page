@@ -24,3 +24,7 @@ yarn-error.log*
 
 # now unused dir and src
 /src/tempStorage
+/src/fonts
+/src/data/Dummy
+/src/imgs/blankImgs
+/src/imgs/logoImgs/TempLogos
