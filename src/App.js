@@ -39,7 +39,7 @@ function App() {
     return (
       <div className="root-wrap">
         <BrowserRouter>
-          {/*<ScrollToTop />*/}
+          <ScrollToTop />
           <Header />
           <Routes>
             <Route path="/" element={<Page1Home />} />

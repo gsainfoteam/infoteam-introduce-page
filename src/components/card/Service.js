@@ -6,7 +6,7 @@ import { MEDIA_QUERY_WIDTH_MOBILE_WIDTH } from "../../hooks/useIsMobile";
 
 const ServiceContainer = styled.div`
   display: flex;
-  margin: 90px 0px;
+  margin: 85px 0px;
 
   max-width: 885px;
   width: 80vw;

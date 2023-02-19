@@ -29,7 +29,7 @@ const memberInfoList = [
   },
   {
     name: "정재홍",
-    role: "frontend", // frontend, backend, both
+    role: "backend", // frontend, backend, both
     email: "jaehong21@gm.gist.ac.kr",
     githubLink: "https://github.com/jaehong21",
     state: "on", // 활동중(on), 쉬는중(off), 졸업(exit)
