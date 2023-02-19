@@ -129,8 +129,9 @@ function WorkEtcCardSetMobile({ animatedItem }) {
             {isHoveredDN ? <br /> : null} night
           </T.DevnightTitleTextMobile>
           <T.DevnightInfoTextMobile isHovering={isHoveredDN}>
-            데브나잇은 가을 밤 지스트에서 개발하는 모두를 위한 교류 행사입니다.
-            크게 두가지 세션(세미나 세션, 네트워킹 세션)이 진행됩니다.
+            인포팀은 가을 밤 지스트에서 개발하는 모두를 위한 교류 행사인
+            DevNight을 주최합니다. 행사는 크게 두가지 세션(세미나 세션, 네트워킹
+            세션)으로 진행됩니다.
           </T.DevnightInfoTextMobile>
           {workEtcCardImgList.map((item) => {
             if (item.name == "devnight")
@@ -202,8 +203,8 @@ function WorkEtcCardSetMobile({ animatedItem }) {
               </div>
             </T.GidaesaengTitleTextMobile>
             <T.GidaesaengInfoTextMobile isHovering={isHoveredGDS}>
-              GIST 대학생 페이스북 그룹은 지스트대학 학생들이 서로 교류할 수
-              있는 가장 큰 커뮤니티입니다
+              인포팀은 지스트 대학생들이 서로 교류하는 커뮤니티인 '지대생
+              페이스북 그룹'을 운영하고 있습니다
             </T.GidaesaengInfoTextMobile>
           </WorkEtcCard_background_rect>
         </div>

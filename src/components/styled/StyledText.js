@@ -312,7 +312,7 @@ export const GidaesaengInfoText = styled.div`
   font-family: "Noto Sans KR", sans-serif;
   position: absolute;
   left: 245px;
-  width: 155px;
+  width: 145px;
   line-height: 130%;
   font-size: 20px;
   text-align: justify;
