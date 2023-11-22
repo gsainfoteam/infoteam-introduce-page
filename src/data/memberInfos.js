@@ -97,6 +97,13 @@ const memberInfoList = [
     githubLink: "https://github.com/gyoenge",
     state: "on", // 활동중(on), 쉬는중(off), 졸업(exit)
   },
+    {
+    name: "심수연",
+    role: "frontend", // frontend, backend, both
+    email: "suyeonshim@gm.gist.ac.kr",
+    githubLink: "https://github.com/Shimsuyeon",
+    state: "on", // 활동중(on), 쉬는중(off), 졸업(exit)
+  },
 ];
 
 // 팀원 카드 이름 가나다순으로 정렬
