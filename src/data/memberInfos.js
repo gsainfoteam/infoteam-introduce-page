@@ -97,11 +97,18 @@ const memberInfoList = [
     githubLink: "https://github.com/gyoenge",
     state: "on", // 활동중(on), 쉬는중(off), 졸업(exit)
   },
-    {
+  {
     name: "심수연",
     role: "frontend", // frontend, backend, both
     email: "suyeonshim@gm.gist.ac.kr",
     githubLink: "https://github.com/Shimsuyeon",
+    state: "on", // 활동중(on), 쉬는중(off), 졸업(exit)
+  },
+  {
+    name: "이보성",
+    role: "both", // frontend, backend, both
+    email: "paperstar@gm.gist.ac.kr",
+    githubLink: "https://github.com/2paperstar",
     state: "on", // 활동중(on), 쉬는중(off), 졸업(exit)
   },
 ];
