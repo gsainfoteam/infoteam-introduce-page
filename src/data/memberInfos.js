@@ -106,7 +106,7 @@ const memberInfoList = [
   },
   {
     name: "이보성",
-    role: "both", // frontend, backend, both
+    role: "full-stack", // frontend, backend, both
     email: "paperstar@gm.gist.ac.kr",
     githubLink: "https://github.com/2paperstar",
     state: "on", // 활동중(on), 쉬는중(off), 졸업(exit)
