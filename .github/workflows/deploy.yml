@@ -30,7 +30,7 @@ jobs:
       - name: Install Node.js dependencies
         run: yarn install
       - name: Build
-        run: yarn build
+        run: CI=false yarn build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
