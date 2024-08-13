@@ -125,6 +125,13 @@ const memberInfoList = [
     githubLink: "https://github.com/no-ikjun",
     state: "on", // 활동중(on), 쉬는중(off), 졸업(exit)
   },
+  {
+    name: "이신혁",
+    role: "backend", // frontend, backend, both
+    email: "dawnfire05@gm.gist.ac.kr",
+    githubLink: "https://github.com/dawnfire05",
+    state: "on", // 활동중(on), 쉬는중(off), 졸업(exit)
+  },
 ];
 
 // 팀원 카드 이름 가나다순으로 정렬
