@@ -7,6 +7,13 @@ const memberInfoList = [
     state: "on", // 활동중(on), 쉬는중(off), 졸업(exit)
   },
   {
+    name: "한세민",
+    role: "frontend", // frontend, backend, both
+    email: "han299792@gm.gist.ac.kr",
+    githubLink: "https://github.com/han299792",
+    state: "on", // 활동중(on), 쉬는중(off), 졸업(exit)
+  },
+  {
     name: "고도현",
     role: "frontend", // frontend, backend, both
     email: "doridori@gm.gist.ac.kr",
