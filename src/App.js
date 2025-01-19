@@ -20,40 +20,34 @@ import Page3Members from "./pages/Page3_Members";
 import PageXNotFound from "./pages/PageX_NotFound";
 import Page2ServicesMobile from "./pages/Page2_Services_Mobile";
 import Page3MembersMobile from "./pages/Page3_Members_Mobile";
+import WIPPage from "./pages/WIP";
+import DesktopLayout from "./layout/DesktopLayout";
 
 function App() {
   const isBigMobile = useIsMobile();
-  if (isBigMobile) {
-    return (
-      <div className="root-wrap">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Page1HomeMobile />} />
-            <Route path="/service" element={<Page2ServicesMobile />} />
-            <Route path="/member" element={<Page3MembersMobile />} />
-            <Route path="/*" element={<PageXNotFound />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </div>
-    );
-  } else {
-    return (
-      <div className="root-wrap">
-        <BrowserRouter>
-          <ScrollToTop />
-          <Header />
-          <Routes>
-            <Route path="/" element={<Page1Home />} />
-            <Route path="/service" element={<Page2Services />} />
-            <Route path="/member" element={<Page3Members />} />
-            <Route path="/*" element={<PageXNotFound />} />
-          </Routes>
-          <Footer />
-        </BrowserRouter>
-      </div>
-    );
-  }
+  return (
+    <div className="root-wrap">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<WIPPage />} />
+          {isBigMobile ? (
+            <>
+              <Route path="/home" element={<Page1HomeMobile />} />
+              <Route path="/service" element={<Page2ServicesMobile />} />
+              <Route path="/member" element={<Page3MembersMobile />} />
+            </>
+          ) : (
+            <Route element={<DesktopLayout />}>
+              <Route path="/home" element={<Page1Home />} />
+              <Route path="/service" element={<Page2Services />} />
+              <Route path="/member" element={<Page3Members />} />
+            </Route>
+          )}
+          <Route path="/*" element={<PageXNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;

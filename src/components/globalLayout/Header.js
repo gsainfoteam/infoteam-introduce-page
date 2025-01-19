@@ -107,7 +107,7 @@ function Header() {
   return (
     <HeaderContainer className={hide && "hide"} simplify={simplify}>
       <HeaderWrap>
-        <HomeButton to="/">
+        <HomeButton to="/home">
           <LogoIcon src={navbarLogo} />
         </HomeButton>
         <MenuWrap>
