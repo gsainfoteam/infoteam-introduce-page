@@ -2,6 +2,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useFBX, useTexture } from "@react-three/drei";
 import styled from "styled-components";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const WIPPage = () => {
   return (
@@ -20,7 +21,9 @@ const WIPPage = () => {
           현재 인포팀 소개 페이지는 새롭게 단장 중에 있습니다. 조만간 다시
           찾아뵙겠습니다.
         </Description>
-        <VisitLink href="/home">기존 페이지 방문하기</VisitLink>
+        <VisitLink>
+          <Link to="/home">기존 페이지 방문하기</Link>
+        </VisitLink>
       </Absolute>
     </Main>
   );
@@ -140,9 +143,11 @@ const Description = styled.p`
   }
 `;
 
-const VisitLink = styled.a`
+const VisitLink = styled.div`
   font-family: "Noto Sans KR", sans-serif;
-  color: rgb(75, 75, 75);
+  a {
+    color: rgb(75, 75, 75);
+  }
   font-size: 14px;
   margin-top: 24px;
 
